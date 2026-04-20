@@ -1,0 +1,9 @@
+{
+  "name": "Team Member Name",
+  "role": "e.g. Lead Developer",
+  "specialization": "Flutter | Backend | Hardware | AI",
+  "photo": "/assets/team/member.jpg",
+  "github": "https://github.com/username",
+  "linkedin": "https://linkedin.com/in/username",
+  "description": "Brief description of their contribution to Tazrout."
+}
