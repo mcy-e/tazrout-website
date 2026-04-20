@@ -33,7 +33,6 @@ yarn-error.log*
 .vscode/
 .idea/
 
-*.md 
 # _references is COMMITTED to git (shared reference for the team)
 # Remove the line below if you do NOT want to commit reference docs
 # _references/
