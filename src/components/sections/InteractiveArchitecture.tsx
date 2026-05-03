@@ -84,9 +84,9 @@ function LazyModelViewer({ modelIndex }: { modelIndex: number }) {
               <div className="text-brand-primary text-lg font-mono animate-pulse">{t.loading}</div>
             </Html>
           }>
-            <ambientLight intensity={1.5} />
-            <directionalLight position={[8, 12, 8]} intensity={1.8} />
-            <directionalLight position={[-5, 8, -5]} intensity={0.6} color="#b8e0c8" />
+            <ambientLight intensity={3.5} />
+            <directionalLight position={[8, 12, 8]} intensity={4.5} />
+            <directionalLight position={[-5, 8, -5]} intensity={1.5} color="#b8e0c8" />
 
             <Grid
               args={[30, 30]}

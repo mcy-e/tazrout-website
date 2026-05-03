@@ -50,11 +50,12 @@ function Particles({ count = 200 }) {
     <instancedMesh ref={mesh} args={[undefined, undefined, count]}>
       {/* Octahedron represents geometric Amazigh patterns */}
       <octahedronGeometry args={[0.08, 0]} />
-      <meshBasicMaterial 
+      <meshStandardMaterial 
         color="#4CAF50" 
+        emissive="#4CAF50"
+        emissiveIntensity={0.5}
         transparent 
-        opacity={0.3} 
-        wireframe
+        opacity={0.6} 
       />
     </instancedMesh>
   )
@@ -93,14 +94,14 @@ export default function HeroScene() {
         <PerspectiveCamera makeDefault position={[0, 0, 5]} fov={50} />
         
         {/* Ambient light for subtle illumination */}
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} color="#4CAF50" />
+        <ambientLight intensity={2} />
+        <pointLight position={[10, 10, 10]} intensity={3} color="#4CAF50" />
         
         <Particles count={150} />
         <DashboardMockup />
         
         {/* Adds atmospheric fog blending into the background */}
-        <fog attach="fog" args={['#141C16', 5, 15]} />
+        <fog attach="fog" args={['#141C16', 5, 20]} />
       </Canvas>
     </div>
   )

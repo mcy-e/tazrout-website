@@ -63,8 +63,8 @@ export default function MobileDrawer({ isOpen, onClose, links, currentPath }: Mo
             animate="open"
             exit="closed"
             className={cn(
-              'fixed end-0 top-0 z-50 h-full w-72 md:hidden',
-              'bg-[var(--color-background)] border-l border-[var(--color-border-subtle)]',
+              'fixed right-0 top-0 z-50 h-full w-72 md:hidden',
+              'bg-[var(--color-background)] border-s border-[var(--color-border-subtle)]',
               'flex flex-col shadow-[var(--shadow-elevated)]'
             )}
           >
@@ -87,7 +87,7 @@ export default function MobileDrawer({ isOpen, onClose, links, currentPath }: Mo
               {links.map((link, i) => (
                 <motion.div
                   key={link.href}
-                  initial={{ opacity: 0, x: 20 }}
+                  initial={{ opacity: 0, x: locale === 'ar' ? -20 : 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.05 * i, duration: 0.3 }}
                 >
@@ -105,13 +105,51 @@ export default function MobileDrawer({ isOpen, onClose, links, currentPath }: Mo
                   </Link>
                 </motion.div>
               ))}
+
+              {/* Mobile Language Switcher */}
+              <div className="mt-6 border-t border-[var(--color-border-subtle)] pt-6 px-4">
+                <p className="text-xs font-mono uppercase tracking-widest text-[var(--color-subtle)] mb-4">
+                  {t.Common.language}
+                </p>
+                <div className="flex flex-col gap-2">
+                  {[
+                    { id: 'ar', label: 'العربية' },
+                    { id: 'en', label: 'English' },
+                    { id: 'fr', label: 'Français' }
+                  ].map((l) => (
+                    <button
+                      key={l.id}
+                      onClick={() => {
+                        const segments = currentPath.split('/')
+                        if (['ar', 'en', 'fr'].includes(segments[1])) {
+                          segments[1] = l.id
+                          window.location.href = segments.join('/') || '/'
+                        } else {
+                          window.location.href = `/${l.id}${currentPath}`
+                        }
+                      }}
+                      className={cn(
+                        'flex items-center justify-between rounded-lg px-4 py-2 text-sm transition-all',
+                        locale === l.id 
+                          ? 'bg-brand-primary text-white font-bold' 
+                          : 'text-[var(--color-muted)] hover:bg-[var(--color-surface-hover)]'
+                      )}
+                    >
+                      {l.label}
+                      {locale === l.id && (
+                        <div className="h-1.5 w-1.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </nav>
 
-            <div className="border-t border-[var(--color-border-subtle)] px-6 py-4">
-              <p className="text-xs text-[var(--color-subtle)]">
+            <div className="border-t border-[var(--color-border-subtle)] px-6 py-4 bg-[var(--color-surface)]">
+              <p className="text-[10px] font-mono text-[var(--color-subtle)] uppercase tracking-wider">
                 Tazrout — Smart Irrigation System
               </p>
-              <p className="mt-1 text-xs text-[var(--color-subtle)]">
+              <p className="mt-1 text-[10px] font-mono text-[var(--color-subtle)] uppercase tracking-wider">
                 NSCS Algeria · 2026
               </p>
             </div>

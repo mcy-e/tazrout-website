@@ -12,22 +12,30 @@ import { useTranslation, useLocale } from '@/lib/useTranslation'
 // ============================================================
 const SHAPES = [
   { src: '/assets/animations/shape_4.svg', size: 180, top: '5%', left: '85%', delay: 0 },
-  { src: '/assets/animations/shape_5.svg', size: 140, top: '15%', left: '5%', delay: 0.5 },
-  { src: '/assets/animations/shape_6.svg', size: 200, top: '25%', left: '80%', delay: 1 },
-  { src: '/assets/animations/shape_7.svg', size: 160, top: '35%', left: '10%', delay: 0.2 },
-  { src: '/assets/animations/shape_4.svg', size: 150, top: '45%', left: '90%', delay: 0.8 },
-  { src: '/assets/animations/shape_5.svg', size: 170, top: '55%', left: '8%', delay: 0.3 },
-  { src: '/assets/animations/shape_6.svg', size: 190, top: '65%', left: '85%', delay: 0.6 },
-  { src: '/assets/animations/shape_7.svg', size: 150, top: '75%', left: '5%', delay: 1.2 },
-  { src: '/assets/animations/shape_4.svg', size: 210, top: '85%', left: '88%', delay: 0.4 },
-  { src: '/assets/animations/shape_5.svg', size: 140, top: '95%', left: '12%', delay: 0.9 },
+  { src: '/assets/animations/shape_5.svg', size: 140, top: '12%', left: '5%', delay: 0.5 },
+  { src: '/assets/animations/shape_6.svg', size: 200, top: '18%', left: '75%', delay: 1 },
+  { src: '/assets/animations/shape_7.svg', size: 160, top: '25%', left: '15%', delay: 0.2 },
+  { src: '/assets/animations/shape_4.svg', size: 150, top: '32%', left: '88%', delay: 0.8 },
+  { src: '/assets/animations/shape_5.svg', size: 170, top: '40%', left: '10%', delay: 0.3 },
+  { src: '/assets/animations/shape_6.svg', size: 190, top: '48%', left: '82%', delay: 0.6 },
+  { src: '/assets/animations/shape_7.svg', size: 150, top: '55%', left: '5%', delay: 1.2 },
+  { src: '/assets/animations/shape_4.svg', size: 210, top: '62%', left: '90%', delay: 0.4 },
+  { src: '/assets/animations/shape_5.svg', size: 140, top: '70%', left: '15%', delay: 0.9 },
+  { src: '/assets/animations/shape_6.svg', size: 180, top: '78%', left: '80%', delay: 1.5 },
+  { src: '/assets/animations/shape_7.svg', size: 160, top: '85%', left: '8%', delay: 0.7 },
+  { src: '/assets/animations/shape_4.svg', size: 140, top: '92%', left: '70%', delay: 1.1 },
+  { src: '/assets/animations/shape_5.svg', size: 160, top: '98%', left: '12%', delay: 0.4 },
+  { src: '/assets/animations/shape_6.svg', size: 200, top: '3%', left: '30%', delay: 2 },
+  { src: '/assets/animations/shape_7.svg', size: 130, top: '35%', left: '45%', delay: 1.8 },
+  { src: '/assets/animations/shape_4.svg', size: 170, top: '65%', left: '35%', delay: 0.9 },
+  { src: '/assets/animations/shape_5.svg', size: 150, top: '80%', left: '55%', delay: 1.3 },
 ]
 
-function FloatingShape({ src, size, delay }: { src: string; size: number; delay: number }) {
+function FloatingShape({ src, size, delay, color }: { src: string; size: number; delay: number; color?: string }) {
   return (
     <motion.div
-      className="relative opacity-20 hover:opacity-40 transition-opacity duration-700"
-      style={{ width: size, height: size }}
+      className="relative transition-opacity duration-700"
+      style={{ width: size, height: size, opacity: 0.15, filter: color ? `drop-shadow(0 0 20px ${color})` : 'none' }}
       animate={{ y: [0, -30, 0], rotate: [0, 5, -5, 0] }}
       transition={{ duration: 15 + delay * 2, repeat: Infinity, ease: 'easeInOut', delay }}
     >
@@ -40,8 +48,8 @@ function DecorativeShapes() {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
       {SHAPES.map((s, i) => (
-        <div key={i} className="absolute" style={{ top: s.top, left: s.left }}>
-          <FloatingShape src={s.src} size={s.size} delay={s.delay} />
+        <div key={i} className="absolute scale-[0.6] md:scale-100" style={{ top: s.top, left: s.left }}>
+          <FloatingShape src={s.src} size={s.size} delay={s.delay} color={i % 3 === 0 ? '#4CAF50' : i % 3 === 1 ? '#2E7D32' : undefined} />
         </div>
       ))}
     </div>
@@ -100,7 +108,7 @@ function TimelineNode({ date, side }: { date: string; side: 'left' | 'right' }) 
     : 'end-full me-8 md:me-12 justify-end' // Card at End -> Date at Start
 
   return (
-    <div ref={ref} className="absolute left-4 md:left-1/2 -translate-x-1/2 top-6 z-20">
+    <div ref={ref} className="absolute left-1/2 -translate-x-1/2 top-6 z-20">
       <motion.div
         className="relative w-6 h-6 rounded-full border-2 border-[var(--color-primary)] bg-[var(--color-surface)]"
         animate={
@@ -169,7 +177,7 @@ function StoryCard({ event, index }: { event: EventData; index: number }) {
   return (
     <div
       ref={ref}
-      className={`relative flex flex-col md:flex-row items-start w-full mb-40 ${isLeft ? '' : 'md:flex-row-reverse'}`}
+      className={`relative flex flex-col md:flex-row items-center md:items-start w-full mb-24 sm:mb-40 ${isLeft ? '' : 'md:flex-row-reverse'}`}
     >
       {/* Spacer */}
       <div className="hidden md:block w-1/2" />
@@ -179,14 +187,14 @@ function StoryCard({ event, index }: { event: EventData; index: number }) {
 
       {/* Card */}
       <motion.div
-        className={`w-full md:w-[40%] ${isLeft ? 'md:pe-4 ps-14 md:ps-0 md:me-auto md:ms-16' : 'md:ps-4 ps-14 md:ms-auto md:me-16'}`}
+        className={`w-full md:w-[40%] pt-20 md:pt-0 px-4 md:px-0 ${isLeft ? 'md:pe-4 md:me-auto md:ms-16' : 'md:ps-4 md:ms-auto md:me-16'}`}
         initial={{ opacity: 0, x: slideOffset, y: 20 }}
         animate={isInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, x: slideOffset, y: 20 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
         {/* Mobile date */}
         <p
-          className="md:hidden font-mono text-lg font-bold mb-3"
+          className="md:hidden font-mono text-lg font-bold mb-8 text-center"
           style={{
             color: '#4CAF50',
             textShadow: '0 0 15px rgba(76,175,80,0.8)',
@@ -263,13 +271,13 @@ function Timeline() {
   ]
 
   return (
-    <div ref={containerRef} className="relative w-full max-w-6xl mx-auto px-4 sm:px-8 pt-20 pb-8">
+    <div ref={containerRef} className="relative w-full max-w-6xl mx-auto px-4 sm:px-8 pt-12 sm:pt-20 pb-8">
       {/* Track background */}
-      <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-brand-primary/6 -translate-x-1/2" />
+      <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-brand-primary/6 -translate-x-1/2" />
 
       {/* Glowing animated line */}
       <motion.div
-        className="absolute left-4 md:left-1/2 top-0 w-[2px] -translate-x-1/2 rounded-full"
+        className="absolute left-1/2 top-0 w-[2px] -translate-x-1/2 rounded-full"
         style={{
           height: lineHeight,
           background: 'linear-gradient(to bottom, rgba(76,175,80,1), rgba(76,175,80,0.5))',
@@ -306,7 +314,7 @@ function ClosingSection() {
       />
 
       <motion.div
-        className="max-w-3xl mx-auto text-center space-y-8 p-12 sm:p-16 rounded-3xl border bg-[var(--color-surface)] relative overflow-hidden"
+        className="max-w-3xl mx-auto text-center space-y-8 p-8 sm:p-16 rounded-3xl border bg-[var(--color-surface)] relative overflow-hidden"
         animate={
           isInView
             ? {
@@ -341,7 +349,7 @@ function ClosingSection() {
           </motion.p>
 
           <motion.h2
-            className="text-4xl sm:text-5xl font-heading font-bold text-[var(--color-foreground)] leading-tight mt-4"
+            className="text-3xl sm:text-5xl font-heading font-bold text-[var(--color-foreground)] leading-tight mt-4"
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
@@ -414,7 +422,7 @@ export default function AboutPage() {
         </motion.div>
 
         <motion.h1
-          className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-[var(--color-foreground)] leading-[1.1] mb-8"
+          className="font-heading text-4xl sm:text-6xl lg:text-7xl font-bold text-[var(--color-foreground)] leading-[1.1] mb-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.15 }}
