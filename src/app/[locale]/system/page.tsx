@@ -19,7 +19,7 @@ export default async function SystemPage({ params }: { params: Promise<{ locale:
 
   return (
     <main className="bg-[var(--color-background)]">
-      <div className="pt-28 pb-12 text-center section-container px-6">
+      <div className="pt-20 sm:pt-28 pb-12 text-center section-container px-6">
         <h1 className="font-heading text-3xl sm:text-5xl font-bold text-[var(--color-foreground)] mb-4">
           {system.banner_title}
         </h1>

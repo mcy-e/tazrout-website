@@ -64,37 +64,14 @@ export default function ArchitectureDiagram() {
   ]
 
   return (
-    <section className="py-20 sm:py-32">
-      <div className="section-container">
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-          variants={staggerContainer}
-          className="mx-auto max-w-3xl text-center mb-16"
-        >
-          <motion.h2 
-            variants={fadeUp}
-            className="font-heading text-3xl font-bold tracking-tight text-[var(--color-foreground)] sm:text-4xl"
-          >
-            {t.Architecture.title}
-          </motion.h2>
-          <motion.p 
-            variants={fadeUp}
-            className="mt-4 text-lg text-[var(--color-muted)]"
-          >
-            {t.Architecture.description}
-          </motion.p>
-        </motion.div>
-
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-50px' }}
-          variants={staggerContainer}
-          className="relative mx-auto max-w-5xl"
-        >
-          <div className="flex flex-col items-center justify-center gap-6 lg:flex-row lg:gap-2 px-4 sm:px-0">
+    <div className="relative mx-auto max-w-5xl px-4 sm:px-0">
+      <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-50px' }}
+        variants={staggerContainer}
+      >
+        <div className="flex flex-col items-center justify-center gap-6 lg:flex-row lg:gap-2">
             {NODES.map((node, i) => (
               <div key={node.id} className="flex flex-col items-center lg:flex-row w-full lg:w-auto max-w-sm lg:max-w-none">
                 {/* Node Card */}
@@ -105,10 +82,10 @@ export default function ArchitectureDiagram() {
                   <div className={`mb-4 flex h-14 w-14 sm:h-12 sm:w-12 items-center justify-center rounded-xl border ${node.bg} ${node.color} ${node.border}`}>
                     {node.icon}
                   </div>
-                  <h3 className="font-heading text-base sm:text-sm font-bold text-[var(--color-foreground)]">
+                  <h3 className="font-heading text-sm sm:text-base font-bold text-[var(--color-foreground)]">
                     {node.title}
                   </h3>
-                  <p className="mt-2 sm:mt-1 text-sm sm:text-xs text-[var(--color-muted)] leading-relaxed">
+                  <p className="mt-1 text-xs sm:text-sm text-[var(--color-muted)] leading-relaxed">
                     {node.subtitle}
                   </p>
                 </motion.div>
@@ -125,8 +102,7 @@ export default function ArchitectureDiagram() {
               </div>
             ))}
           </div>
-        </motion.div>
-      </div>
-    </section>
+      </motion.div>
+    </div>
   )
 }

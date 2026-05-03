@@ -104,7 +104,8 @@ function LazyModelViewer({ modelIndex }: { modelIndex: number }) {
 
             <OrbitControls
               enablePan={false}
-              enableZoom={true}
+              enableZoom={false}
+              makeDefault
               minDistance={4}
               maxDistance={16}
               autoRotate
@@ -142,8 +143,8 @@ export default function InteractiveArchitecture() {
   return (
     <div className="relative">
       {stops.map((stop, i) => (
-        <section key={i} className="relative w-full min-h-screen flex items-center py-12 sm:py-20">
-          <div className={`w-full flex flex-col lg:flex-row items-center gap-8 px-6 lg:px-16 ${stop.side === 'left' ? '' : 'lg:flex-row-reverse'}`}>
+        <section key={i} className="relative w-full min-h-0 sm:min-h-screen flex items-center py-16 sm:py-20">
+          <div className={`w-full flex flex-col lg:flex-row items-center gap-10 px-6 lg:px-16 ${stop.side === 'left' ? '' : 'lg:flex-row-reverse'}`}>
             
             {/* Text Card */}
             <motion.div
@@ -153,10 +154,10 @@ export default function InteractiveArchitecture() {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              <span className="text-brand-primary/50 text-xs font-mono uppercase tracking-[0.2em] block mb-3">
+              <span className="text-brand-primary/50 text-xs font-mono uppercase tracking-[0.1em] sm:tracking-[0.2em] block mb-3">
                 {stop.tag}
               </span>
-              <h2 className="text-3xl sm:text-5xl font-heading font-bold text-[var(--color-foreground)] mb-4 leading-tight">
+              <h2 className="text-2xl sm:text-5xl font-heading font-bold text-[var(--color-foreground)] mb-4 leading-tight">
                 {stop.title}
               </h2>
               <p className="text-base sm:text-lg text-[var(--color-muted)] leading-relaxed mb-6">
@@ -173,7 +174,7 @@ export default function InteractiveArchitecture() {
 
             {/* 3D Model Viewer (lazy-loaded) */}
             <motion.div
-              className="w-full lg:w-[62%] h-[55vh] sm:h-[60vh] lg:h-[65vh] rounded-2xl overflow-hidden border border-[var(--color-border-subtle)] bg-[var(--color-surface)] shadow-[var(--shadow-elevated)]"
+              className="w-full lg:w-[62%] h-[40vh] sm:h-[60vh] lg:h-[65vh] rounded-2xl overflow-hidden border border-[var(--color-border-subtle)] bg-[var(--color-surface)] shadow-[var(--shadow-elevated)] touch-pan-y"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
