@@ -53,7 +53,7 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className="flex min-h-screen flex-col bg-[var(--color-background)]">
+      <body suppressHydrationWarning className="flex min-h-screen flex-col bg-[var(--color-background)]">
         <LocaleProvider locale={locale as 'ar' | 'en' | 'fr'}>
           <Navbar />
           <main className="flex-1 pt-16 sm:pt-20">{children}</main>
