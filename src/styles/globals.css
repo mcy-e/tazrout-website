@@ -1,0 +1,361 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ── Surface Tokens (Dark — default) ── */
+    --color-background: #141C16;
+    --color-background-mid: #182319;
+    --color-surface: #243128;
+    --color-surface-elevated: #2B3A2D;
+    --color-surface-hover: #394C3F;
+    --color-surface-active: #4A6353;
+
+    /* ── Text Tokens ── */
+    --color-foreground: #F8FCFA;
+    --color-body: #C5D5CD;
+    --color-muted: #8CAAA5;
+    --color-subtle: #6B8B77;
+
+    /* ── Border / Divider ── */
+    --color-border: #5C7D67;
+    --color-border-subtle: rgba(92, 125, 103, 0.3);
+
+    /* ── Brand ── */
+    --color-primary: #4CAF50;
+    --color-primary-dark: #258439;
+    --color-primary-light: #81C784;
+    --color-primary-10: rgba(76, 175, 80, 0.1);
+    --color-primary-20: rgba(76, 175, 80, 0.2);
+
+    /* ── Semantic Status ── */
+    --color-error: #E94E31;
+    --color-warning: #F6A623;
+    --color-info: #488FE1;
+    --color-success: #4CAF50;
+
+    /* ── Data Visualization ── */
+    --color-series-blue: #549DF6;
+    --color-series-amber: #FFB74D;
+    --color-series-danger: #EE7373;
+    --color-series-cyan: #4FC3F7;
+    --color-series-purple: #C084FC;
+
+    /* ── Spacing Scale ── */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+    --space-4xl: 96px;
+
+    /* ── Radius ── */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    /* ── Shadows ── */
+    --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3);
+    --shadow-elevated: 0 8px 40px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 30px rgba(76, 175, 80, 0.15);
+
+    /* ── Glass ── */
+    --glass-bg: rgba(24, 35, 25, 0.7);
+    --glass-nav-bg: rgba(20, 28, 22, 0.7);
+
+    /* ── Logo Display ── */
+    --logo-dark-display: block;
+    --logo-light-display: none;
+
+    /* ── Transition ── */
+    --duration-fast: 150ms;
+    --duration-normal: 300ms;
+    --duration-slow: 500ms;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-body);
+    font-family: var(--font-inter), 'Inter', sans-serif;
+  }
+
+  /* ── Light Mode Tokens ── */
+  .light {
+    --color-background: #F8FCFA;
+    --color-background-mid: #EEF5F3;
+    --color-surface: #FFFFFF;
+    --color-surface-elevated: #F0F7F2;
+    --color-surface-hover: #E2EFE5;
+    --color-surface-active: #D1E4D6;
+
+    --color-foreground: #141C16;
+    --color-body: #2B3A2D;
+    --color-muted: #5C7D67;
+    --color-subtle: #8CAAA5;
+
+    --color-border: #C5D5CD;
+    --color-border-subtle: rgba(92, 125, 103, 0.15);
+
+    --color-primary: #258439;
+    --color-primary-dark: #1A5E29;
+    --color-primary-light: #4CAF50;
+
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --shadow-elevated: 0 8px 32px rgba(0, 0, 0, 0.08);
+    --shadow-glow: 0 0 30px rgba(37, 132, 57, 0.1);
+
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-nav-bg: rgba(248, 252, 250, 0.75);
+
+    --logo-dark-display: none;
+    --logo-light-display: block;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-lora), 'Lora', serif;
+    color: var(--color-foreground);
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background-color: var(--color-primary-20);
+    color: var(--color-foreground);
+  }
+}
+
+@layer components {
+  .glass-surface {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-border-subtle);
+  }
+
+  .glass-navbar {
+    background: var(--glass-nav-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  }
+
+  .gradient-hero {
+    background: radial-gradient(
+      ellipse 80% 60% at 50% 40%,
+      rgba(76, 175, 80, 0.08) 0%,
+      transparent 70%
+    );
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 50%, var(--color-primary-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .section-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  @media (min-width: 768px) {
+    .section-container {
+      padding-left: var(--space-xl);
+      padding-right: var(--space-xl);
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .section-container {
+      max-width: 1400px;
+    }
+  }
+
+  /* Reference docs rendered from Markdown (docs/[slug]) */
+  .doc-markdown {
+    color: var(--color-body);
+    font-size: 0.9375rem;
+    line-height: 1.75;
+  }
+
+  .doc-markdown > *:first-child {
+    margin-top: 0;
+  }
+
+  .doc-markdown h1,
+  .doc-markdown h2,
+  .doc-markdown h3,
+  .doc-markdown h4 {
+    font-family: var(--font-lora), 'Lora', serif;
+    color: var(--color-foreground);
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  .doc-markdown h1 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .doc-markdown h2 {
+    font-size: 1.5rem;
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .doc-markdown h3 {
+    font-size: 1.2rem;
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .doc-markdown h4 {
+    font-size: 1.05rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .doc-markdown p {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .doc-markdown a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .doc-markdown a:hover {
+    color: var(--color-primary-dark);
+  }
+
+  .doc-markdown ul,
+  .doc-markdown ol {
+    margin: 0.75rem 0;
+    padding-left: 1.35rem;
+  }
+
+  .doc-markdown li {
+    margin: 0.35rem 0;
+  }
+
+  .doc-markdown blockquote {
+    margin: 1rem 0;
+    padding: 0.75rem 1rem;
+    border-left: 3px solid var(--color-primary);
+    background: var(--color-surface-elevated);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    color: var(--color-muted);
+  }
+
+  .doc-markdown hr {
+    margin: 2rem 0;
+    border: 0;
+    border-top: 1px solid var(--color-border-subtle);
+  }
+
+  .doc-markdown :not(pre) > code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.84em;
+    padding: 0.15em 0.4em;
+    border-radius: var(--radius-sm);
+    background: var(--color-surface-elevated);
+    border: 1px solid var(--color-border-subtle);
+    color: var(--color-foreground);
+  }
+
+  .doc-markdown pre {
+    margin: 1rem 0;
+    padding: 1rem 1.1rem;
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-subtle);
+    overflow-x: auto;
+    font-size: 0.8125rem;
+    line-height: 1.55;
+  }
+
+  .doc-markdown pre code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    background: none;
+    border: 0;
+    padding: 0;
+    font-size: inherit;
+    color: var(--color-body);
+  }
+
+  .doc-markdown table {
+    width: 100%;
+    margin: 1.25rem 0;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  .doc-markdown thead {
+    background: var(--color-surface-elevated);
+  }
+
+  .doc-markdown th,
+  .doc-markdown td {
+    border: 1px solid var(--color-border-subtle);
+    padding: 0.5rem 0.65rem;
+    text-align: start;
+    vertical-align: top;
+  }
+
+  .doc-markdown th {
+    color: var(--color-foreground);
+    font-weight: 600;
+  }
+
+  .doc-markdown img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+  }
+}
+
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
