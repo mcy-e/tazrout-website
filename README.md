@@ -1,38 +1,38 @@
-# Tazrout Website
+# Tazrout website
 
-Public-facing website for the Tazrout smart irrigation system.
-Built with Next.js 14 + TypeScript + Tailwind CSS + Three.js + Framer Motion.
+Public site for the Tazrout smart irrigation project. Built with Next.js 14, TypeScript, Tailwind CSS, Framer Motion, and Three.js.
 
-## Quick Start
+## Quick start
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+Open [http://localhost:3000](http://localhost:3000). Requests without a locale prefix redirect to the default (`ar`).
 
-## Branches
+## Layout
 
-| Branch | Purpose |
-|---|---|
-| `main` | Production |
-| `beta` | Active development (current) |
+| Path | Role |
+|------|------|
+| `src/app/[locale]/` | Pages and layout |
+| `src/components/` | Shared UI |
+| `messages/` | `ar` / `en` / `fr` copy |
+| `content/technical-docs/` | Markdown for `/docs/[slug]` |
+| `public/` | Static assets |
+| `docs/` | Internal project notes (deploy, scope, git style, checklist) |
 
-## For the Team — Adding Content
+## Contributing
 
-1. **Team members** → add JSON to `content/team/[name].json`
-2. **Partner projects** → add JSON to `content/partners/[name].json`
-3. **Documentation** → add MDX to `content/docs/[slug].mdx`
-4. **Screenshots** → place in `_references/dashboard-ui/` (dark/ + light/)
-5. **Design system files** → place in `_references/design-system/`
-6. **Amazigh SVGs** → place in `_references/amazigh/` (patterns/ symbols/ tifinagh/)
-7. **Technical docs** → place in `_references/technical-docs/`
+- **Strings:** keep `messages/ar.json`, `en.json`, and `fr.json` in sync.
+- **Team / partners:** `content/team/` and `content/partners/` (see README files there).
+- **Long docs:** edit files under `content/technical-docs/` and register slugs in `src/lib/docs/doc-registry.ts`.
+- **Images:** `public/assets/`.
 
-See `AGENT_CONTEXT.md` for full agent instructions.
-See `BETA_SCOPE.md` for what ships in beta.
-See `GIT_WORKFLOW.md` for commit conventions.
+## Internal docs
 
-## Deployment
+See **`docs/README.md`** for links to handoff, beta scope, git workflow, and the placeholders checklist.
 
-Hosted on Vercel. See `HANDOFF.md` (generated after build) for deployment steps.
+## Deploy
+
+Use **`docs/vercel-deployment.md`** for a full Vercel beta guide (settings, branches, common errors). **`docs/handoff.md`** has a short summary and post-launch checklist.
