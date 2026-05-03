@@ -35,7 +35,7 @@ export default async function RootLayout({
   const dir = locale === 'ar' ? 'rtl' : 'ltr'
   
   return (
-    <html lang={locale} dir={dir} className={`${inter.variable} ${lora.variable}`}>
+    <html lang={locale} dir={dir} className={`${inter.variable} ${lora.variable}`} data-scroll-behavior="smooth">
       <head>
         <Script
           id="theme-init"
@@ -45,11 +45,19 @@ export default async function RootLayout({
               (function() {
                 try {
                   const savedTheme = localStorage.getItem('tazrout-theme');
+                  const html = document.documentElement;
                   if (savedTheme === 'light') {
-                    document.documentElement.classList.add('light');
+                    html.classList.add('light');
                   } else {
-                    document.documentElement.classList.remove('light');
+                    html.classList.remove('light');
                   }
+                  
+                  // Silence THREE.Clock deprecation warning
+                  const originalWarn = console.warn;
+                  console.warn = function(...args) {
+                    if (typeof args[0] === 'string' && args[0].includes('THREE.Clock')) return;
+                    originalWarn.apply(console, args);
+                  };
                 } catch (e) {}
               })();
             `,

@@ -95,21 +95,23 @@ export default function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className={cn(
-          'fixed left-0 right-0 top-0 z-50 transition-all duration-300',
-          isScrolled ? 'glass-navbar shadow-[var(--shadow-card)]' : 'bg-transparent'
+          'fixed left-0 right-0 top-0 z-50 transition-all duration-300 border-b border-transparent',
+          isScrolled 
+            ? 'bg-[var(--color-background)]/90 backdrop-blur-md shadow-[var(--shadow-card)] border-[var(--color-border-subtle)]' 
+            : 'bg-[var(--color-background)]/50 backdrop-blur-sm'
         )}
       >
         <div className="section-container flex h-16 items-center justify-between sm:h-20">
-          <Link href={`/${locale}`} className="flex items-center gap-2" aria-label="Tazrout Home">
+          <Link href={`/${locale}`} className="flex items-center gap-1.5 sm:gap-2 shrink-0" aria-label="Tazrout Home">
             <Image
               src={isDark ? "/assets/amazigh/logo/Tazrout Logo-1.svg" : "/assets/amazigh/logo/Tazrout Logo.svg"}
               alt="Tazrout Logo"
-              width={32}
-              height={32}
-              className="h-8 w-auto transition-opacity hover:opacity-90 sm:h-10"
+              width={28}
+              height={28}
+              className="h-7 w-auto transition-opacity hover:opacity-90 sm:h-10"
               unoptimized
             />
-            <span className="font-heading text-lg font-bold text-[var(--color-foreground)] sm:text-xl">
+            <span className="font-heading text-base font-bold text-[var(--color-foreground)] sm:text-xl whitespace-nowrap">
               {locale === 'ar' ? 'تازروت' : 'Tazrout'}
             </span>
           </Link>
@@ -176,29 +178,25 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Button & Theme Toggle */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-1 sm:gap-2 md:hidden">
             <button
               onClick={toggleTheme}
-              className="rounded-full p-2 text-[var(--color-muted)] transition-colors hover:bg-[var(--color-surface-hover)] hover:text-brand-primary"
+              className="rounded-full p-1.5 text-[var(--color-muted)] transition-colors hover:bg-[var(--color-surface-hover)] hover:text-brand-primary"
             >
               {isDark ? (
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
               ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
               )}
             </button>
             <button
               id="mobile-menu-toggle"
               type="button"
               onClick={() => setIsDrawerOpen(true)}
-              className={cn(
-                'flex items-center justify-center rounded-lg p-2',
-                'text-[var(--color-muted)] transition-colors hover:text-[var(--color-foreground)]',
-                'hover:bg-[var(--color-surface-hover)]'
-              )}
+              className="flex items-center justify-center rounded-lg p-1.5 text-[var(--color-muted)] transition-colors hover:bg-[var(--color-surface-hover)] hover:text-[var(--color-foreground)]"
               aria-label="Open navigation menu"
             >
-              <Menu size={24} />
+              <Menu size={22} />
             </button>
           </div>
         </div>

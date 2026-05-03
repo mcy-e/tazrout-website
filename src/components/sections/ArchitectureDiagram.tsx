@@ -94,21 +94,21 @@ export default function ArchitectureDiagram() {
           variants={staggerContainer}
           className="relative mx-auto max-w-5xl"
         >
-          <div className="flex flex-col items-center justify-center gap-4 lg:flex-row lg:gap-2">
+          <div className="flex flex-col items-center justify-center gap-6 lg:flex-row lg:gap-2 px-4 sm:px-0">
             {NODES.map((node, i) => (
-              <div key={node.id} className="flex flex-col items-center lg:flex-row">
+              <div key={node.id} className="flex flex-col items-center lg:flex-row w-full lg:w-auto max-w-sm lg:max-w-none">
                 {/* Node Card */}
                 <motion.div 
                   variants={fadeUp}
-                  className="relative z-10 flex w-48 flex-col items-center justify-center rounded-2xl border border-[var(--color-border-subtle)] bg-brand-surface p-6 text-center shadow-[var(--shadow-card)]"
+                  className="relative z-10 flex w-full lg:w-48 flex-col items-center justify-center rounded-2xl border border-[var(--color-border-subtle)] bg-[var(--color-surface)] p-6 text-center shadow-[var(--shadow-card)] hover:border-brand-primary/50 transition-colors"
                 >
-                  <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl border ${node.bg} ${node.color} ${node.border}`}>
+                  <div className={`mb-4 flex h-14 w-14 sm:h-12 sm:w-12 items-center justify-center rounded-xl border ${node.bg} ${node.color} ${node.border}`}>
                     {node.icon}
                   </div>
-                  <h3 className="font-heading text-sm font-bold text-[var(--color-foreground)]">
+                  <h3 className="font-heading text-base sm:text-sm font-bold text-[var(--color-foreground)]">
                     {node.title}
                   </h3>
-                  <p className="mt-1 text-xs text-[var(--color-subtle)]">
+                  <p className="mt-2 sm:mt-1 text-sm sm:text-xs text-[var(--color-muted)] leading-relaxed">
                     {node.subtitle}
                   </p>
                 </motion.div>

@@ -173,7 +173,7 @@ export default function InteractiveArchitecture() {
 
             {/* 3D Model Viewer (lazy-loaded) */}
             <motion.div
-              className="w-full lg:w-[62%] h-[45vh] sm:h-[55vh] lg:h-[65vh] rounded-2xl overflow-hidden border border-[var(--color-border-subtle)] bg-[var(--color-surface)] shadow-[var(--shadow-elevated)]"
+              className="w-full lg:w-[62%] h-[55vh] sm:h-[60vh] lg:h-[65vh] rounded-2xl overflow-hidden border border-[var(--color-border-subtle)] bg-[var(--color-surface)] shadow-[var(--shadow-elevated)]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}

@@ -24,6 +24,7 @@ import { fadeUp, staggerContainer } from '@/lib/animations'
 import Card from '@/components/ui/Card'
 import { useTranslation, useLocale } from '@/lib/useTranslation'
 import DecorativeShapes from '@/components/ui/DecorativeShapes'
+import { cn } from '@/lib/utils'
 
 const MotionLink = motion(Link)
 
@@ -39,28 +40,28 @@ export default function DocsPage() {
       <DecorativeShapes />
 
       {/* ── Hero Header ── */}
-      <section className="relative z-10 pt-32 sm:pt-40 pb-16">
+      <section className="relative z-10 pt-24 sm:pt-40 pb-12 sm:pb-16">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="section-container text-center"
+          className="section-container text-center px-4 sm:px-6"
         >
-          <motion.div variants={fadeUp} className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-primary/20 bg-brand-primary/10 px-4 py-2">
-            <FileText size={16} className="text-brand-primary" />
-            <span className="text-sm font-medium text-brand-primary uppercase tracking-widest">{t.Docs.hero_tag}</span>
+          <motion.div variants={fadeUp} className="mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-brand-primary/20 bg-brand-primary/10 px-3 py-1.5 sm:px-4 sm:py-2">
+            <FileText size={14} className="text-brand-primary sm:size-4" />
+            <span className="text-[10px] sm:text-sm font-medium text-brand-primary uppercase tracking-widest">{t.Docs.hero_tag}</span>
           </motion.div>
 
           <motion.h1
             variants={fadeUp}
-            className="font-heading text-4xl font-bold leading-tight text-[var(--color-foreground)] sm:text-5xl md:text-6xl"
+            className="font-heading text-3xl font-bold leading-tight text-[var(--color-foreground)] sm:text-5xl md:text-6xl"
           >
             {t.Docs.hero_title_1} <span className="text-gradient">{t.Docs.hero_title_2}</span>
           </motion.h1>
 
           <motion.p
             variants={fadeUp}
-            className="mx-auto mt-6 max-w-2xl text-lg text-[var(--color-muted)] leading-relaxed"
+            className="mx-auto mt-4 sm:mt-6 max-w-2xl text-base sm:text-lg text-[var(--color-muted)] leading-relaxed"
           >
             {t.Docs.hero_desc}
           </motion.p>
@@ -68,12 +69,12 @@ export default function DocsPage() {
       </section>
 
       {/* ── Quick Links ── */}
-      <section className="relative z-10 pb-20">
+      <section className="relative z-10 pb-12 sm:pb-20">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="section-container flex flex-wrap items-center justify-center gap-4"
+          className="section-container flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 px-4 sm:px-6"
         >
           {(
             [
@@ -104,14 +105,14 @@ export default function DocsPage() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={quickLinkClass}
+                className={cn(quickLinkClass, "w-full sm:w-auto justify-center")}
               >
                 <span className="text-brand-primary">{link.icon}</span>
                 {link.label}
                 <ArrowRight size={14} className="opacity-40 transition-transform group-hover:translate-x-1" />
               </motion.a>
             ) : (
-              <MotionLink key={i} variants={fadeUp} href={`/${locale}${link.href}`} className={quickLinkClass}>
+              <MotionLink key={i} variants={fadeUp} href={`/${locale}${link.href}`} className={cn(quickLinkClass, "w-full sm:w-auto justify-center")}>
                 <span className="text-brand-primary">{link.icon}</span>
                 {link.label}
                 <ArrowRight size={14} className="opacity-40 transition-transform group-hover:translate-x-1" />
@@ -122,50 +123,47 @@ export default function DocsPage() {
       </section>
 
       {/* ── Main Content Grid ── */}
-      <section className="relative z-10 py-12">
-        <div className="section-container max-w-7xl">
-          <div className="grid gap-12 lg:grid-cols-12">
+      <section className="relative z-10 py-8 sm:py-12 px-4 sm:px-6">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-12">
             
             {/* Sidebar Navigation (Sticky) */}
-            <aside className="lg:col-span-3 hidden lg:block">
-              <div className="sticky top-32 space-y-8">
-                <div className="space-y-4">
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-brand-primary opacity-60 px-4">{t.Docs.sidebar_sections}</h4>
-                  <nav className="flex flex-col gap-1">
+            <aside className="lg:col-span-3 w-full lg:w-auto">
+              <div className="lg:sticky lg:top-32 space-y-6 lg:space-y-8">
+                <div className="bg-[var(--color-surface)] lg:bg-transparent p-4 lg:p-0 rounded-2xl border border-[var(--color-border-subtle)] lg:border-none shadow-sm lg:shadow-none">
+                  <h4 className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-brand-primary opacity-60 px-2 lg:px-4 mb-3">
+                    {t.Docs.sidebar_sections}
+                  </h4>
+                  <nav className="flex lg:flex-col gap-2 overflow-x-auto pb-2 lg:pb-0 scrollbar-hide">
                     {[
                       {
                         id: 'architecture',
-                        label: locale === 'ar' ? 'المعمارية (LAN فقط)' : locale === 'fr' ? 'Architecture (LAN uniquement)' : 'Architecture (LAN-only)',
-                        icon: <Layers size={16} />,
+                        label: locale === 'ar' ? 'المعمارية' : locale === 'fr' ? 'Architecture' : 'Architecture',
+                        icon: <Layers size={18} />,
                       },
-                      { id: 'deployment', label: t.Docs.sidebar_deployment, icon: <Server size={16} /> },
-                      { id: 'mqtt', label: t.Docs.sidebar_mqtt, icon: <Radio size={16} /> },
-                      { id: 'database', label: t.Docs.sidebar_database, icon: <Database size={16} /> },
-                      { id: 'ai', label: t.Docs.sidebar_ai, icon: <Activity size={16} /> },
+                      { id: 'deployment', label: locale === 'ar' ? 'التركيب' : locale === 'fr' ? 'Déploiement' : 'Deployment', icon: <Server size={18} /> },
+                      { id: 'mqtt', label: 'MQTT', icon: <Radio size={18} /> },
+                      { id: 'database', label: 'Postgres', icon: <Database size={18} /> },
+                      { id: 'ai', label: 'AI', icon: <Activity size={18} /> },
                       {
                         id: 'security',
-                        label: locale === 'ar' ? 'الأمان والسلامة' : locale === 'fr' ? 'Sécurité & sûreté' : 'Security & Safety',
-                        icon: <ShieldCheck size={16} />,
-                      },
-                      {
-                        id: 'testing',
-                        label: locale === 'ar' ? 'الاختبار والتحقق' : locale === 'fr' ? 'Tests & vérification' : 'Testing & Verification',
-                        icon: <Zap size={16} />,
+                        label: locale === 'ar' ? 'الأمان' : locale === 'fr' ? 'Sécurité' : 'Security',
+                        icon: <ShieldCheck size={18} />,
                       },
                     ].map((item) => (
                       <a 
                         key={item.id}
                         href={`#${item.id}`}
-                        className="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-[var(--color-muted)] hover:text-brand-primary hover:bg-brand-primary/5 transition-all"
+                        className="flex items-center gap-2 sm:gap-3 px-4 py-2.5 rounded-xl text-sm font-bold text-[var(--color-muted)] hover:text-brand-primary hover:bg-brand-primary/10 transition-all whitespace-nowrap lg:whitespace-normal border border-transparent lg:border-none bg-[var(--color-surface-elevated)] lg:bg-transparent"
                       >
-                        {item.icon}
+                        <span className="text-brand-primary/70">{item.icon}</span>
                         {item.label}
                       </a>
                     ))}
                   </nav>
                 </div>
 
-                <div className="p-6 rounded-2xl bg-brand-primary/5 border border-brand-primary/10">
+                <div className="hidden lg:block p-6 rounded-2xl bg-brand-primary/5 border border-brand-primary/10">
                   <div className="flex items-center gap-2 text-brand-primary mb-3">
                     <ShieldCheck size={18} />
                     <span className="text-xs font-bold uppercase tracking-tight">{t.Docs.security_alert_title}</span>
@@ -181,18 +179,18 @@ export default function DocsPage() {
             <main className="lg:col-span-9 space-y-24 pb-32">
               
               {/* Architecture Section */}
-              <section id="architecture" className="scroll-mt-32 space-y-10">
+              <section id="architecture" className="scroll-mt-36 sm:scroll-mt-40 space-y-10 px-4 sm:px-0">
                 <div className="flex items-center gap-4">
                   <div className="h-12 w-12 flex items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
                     <Layers size={24} />
                   </div>
-                  <h2 className="text-3xl font-heading font-bold text-[var(--color-foreground)]">
+                  <h2 className="text-2xl sm:text-3xl font-heading font-bold text-[var(--color-foreground)]">
                     {locale === 'ar' ? 'معمارية LAN فقط' : locale === 'fr' ? 'Architecture LAN uniquement' : 'LAN‑Only Architecture'}
                   </h2>
                 </div>
 
-                <div className="space-y-8">
-                  <p className="text-[var(--color-muted)] leading-relaxed">
+                <div className="space-y-6 sm:space-y-8">
+                  <p className="text-base sm:text-lg text-[var(--color-muted)] leading-relaxed">
                     {locale === 'ar'
                       ? 'تم تصميم تازروت للعمل بالكامل دون إنترنت داخل شبكة المزرعة (LAN). تقوم البوابة بربط LoRa ↔ MQTT، بينما يستضيف الخادم المركزي Mosquitto وPostgreSQL ومحرك الذكاء الاصطناعي والـBackend (جسر WebSocket) على نفس الجهاز لتقليل زمن الاستجابة.'
                       : locale === 'fr'
@@ -202,10 +200,10 @@ export default function DocsPage() {
 
                   <Card className="overflow-hidden border-[var(--color-border-subtle)] bg-[var(--color-surface)]">
                     <div className="px-6 py-3 border-b border-[var(--color-border-subtle)] flex items-center justify-between bg-[var(--color-surface-elevated)]">
-                      <span className="text-[10px] font-mono text-brand-primary font-bold uppercase tracking-widest">
+                      <span className="text-[10px] sm:text-xs font-mono text-brand-primary font-bold uppercase tracking-widest">
                         {locale === 'ar' ? 'مخطط النظام (5 طبقات)' : locale === 'fr' ? 'Schéma du système (5 couches)' : '5-Layer System Diagram'}
                       </span>
-                      <span className="text-[10px] font-mono text-[var(--color-muted)] italic">
+                      <span className="text-[10px] sm:text-xs font-mono text-[var(--color-muted)] italic">
                         {locale === 'ar'
                           ? 'الحقل → البوابة → الوسيط → الخلفية/الذكاء الاصطناعي → الواجهة'
                           : locale === 'fr'
@@ -213,8 +211,12 @@ export default function DocsPage() {
                             : 'Field → Gateway → Broker → Backend/AI → UI'}
                       </span>
                     </div>
-                    <div className="p-6">
-                      <pre className="text-[10px] sm:text-xs font-mono text-[var(--color-body)] leading-relaxed overflow-x-auto whitespace-pre">
+                    <div className="p-4 sm:p-6 bg-[#0a0a0a] overflow-hidden">
+                      <div className="overflow-x-auto custom-scrollbar">
+                        <pre className={cn(
+                          "text-[10px] sm:text-xs font-mono text-brand-primary/90 leading-relaxed whitespace-pre min-w-[600px] sm:min-w-0",
+                          locale === 'ar' ? 'text-right' : 'text-left'
+                        )} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
 {locale === 'ar'
   ? `الطبقة 1 — العتاد الميداني (المناطق)
   مستشعرات → ESP32 + ريلاي + صمام → LoRa
@@ -265,7 +267,11 @@ L4 — Backend + AI
 
 L5 — Frontend
   Dashboard consumes WebSocket stream; read-mostly with Emergency Stop.`}
-                      </pre>
+                        </pre>
+                      </div>
+                      <div className="mt-2 text-[9px] text-[var(--color-muted)] flex items-center gap-1 sm:hidden">
+                        <ArrowRight size={10} /> {locale === 'ar' ? 'اسحب لليمين لرؤية المزيد' : 'Swipe right to see more'}
+                      </div>
                     </div>
                   </Card>
 
@@ -279,7 +285,7 @@ L5 — Frontend
                             ? 'Flux de données (capteurs → dashboard)'
                             : 'Data Flow (Sensors → Dashboard)'}
                       </h3>
-                      <ol className="text-xs text-[var(--color-muted)] space-y-2">
+                      <ol className="text-sm text-[var(--color-muted)] space-y-3">
                         <li>
                           {locale === 'ar'
                             ? '1) يقرأ ESP32 المستشعرات ويرسل إطار LoRa.'
@@ -293,7 +299,7 @@ L5 — Frontend
                             : locale === 'fr'
                               ? '2) La passerelle décode et publie sur'
                               : '2) Gateway decodes and publishes to'}{' '}
-                          <code className="text-brand-primary">tazrout/zones/&lt;zoneId&gt;/sensors</code>.
+                          <code className="text-brand-primary">tazrout/sensors</code>.
                         </li>
                         <li>
                           {locale === 'ar'
@@ -321,7 +327,7 @@ L5 — Frontend
                             ? 'Flux de données (IA → commande vanne → ACK)'
                             : 'Data Flow (AI → Valve Command → ACK)'}
                       </h3>
-                      <ol className="text-xs text-[var(--color-muted)] space-y-2">
+                      <ol className="text-sm text-[var(--color-muted)] space-y-3">
                         <li>
                           {locale === 'ar'
                             ? '1) يشترك محرك AI بمواضيع المستشعرات ويقرر الري.'
@@ -343,7 +349,7 @@ L5 — Frontend
                             : locale === 'fr'
                               ? '3) Publie la commande sur'
                               : '3) Publishes command to'}{' '}
-                          <code className="text-brand-primary">tazrout/zones/&lt;zoneId&gt;/valve/command</code> (QoS 2).
+                          <code className="text-brand-primary">tazrout/valve/command</code>.
                         </li>
                         <li>
                           {locale === 'ar'
@@ -378,9 +384,11 @@ L5 — Frontend
                       <h3 className="text-sm font-bold text-brand-primary mb-4 flex items-center gap-2">
                         <Terminal size={16} /> 1. Core Dependencies
                       </h3>
-                      <pre className="text-[10px] font-mono text-[var(--color-body)] space-y-1 leading-relaxed overflow-x-auto">
-                        {`# Install PostgreSQL\nsudo apt install postgresql postgresql-contrib\n\n# Install MQTT Broker\nsudo apt install mosquitto mosquitto-clients\n\n# Install Java 17 & Maven\nsudo apt install openjdk-17-jdk maven`}
-                      </pre>
+                      <div className="overflow-x-auto custom-scrollbar">
+                        <pre className="text-[10px] font-mono text-brand-primary/80 space-y-1 leading-relaxed">
+                          {`# Install PostgreSQL\nsudo apt install postgresql postgresql-contrib\n\n# Install MQTT Broker\nsudo apt install mosquitto mosquitto-clients\n\n# Install Java 17 & Maven\nsudo apt install openjdk-17-jdk maven`}
+                        </pre>
+                      </div>
                     </Card>
 
                     <Card className="p-6 border-[var(--color-border-subtle)] bg-[var(--color-surface)]">
@@ -463,7 +471,9 @@ L5 — Frontend
                     <h3 className="text-sm font-bold text-brand-primary mb-4 flex items-center gap-2">
                       <Code size={16} /> Example Payload (Valve Command)
                     </h3>
-                    <pre className="text-[10px] sm:text-xs font-mono text-[var(--color-body)] leading-relaxed overflow-x-auto">
+                    <div className="p-4 sm:p-6 bg-[#0a0a0a] overflow-hidden">
+                      <div className="overflow-x-auto custom-scrollbar">
+                        <pre className="text-[10px] sm:text-xs font-mono text-brand-primary/90 leading-relaxed min-w-[400px] sm:min-w-0">
 {`{
   "packet_type": "VALVE_COMMAND",
   "command_id": "CMD-2026-0112",
@@ -477,7 +487,9 @@ L5 — Frontend
   "linked_decision_id": "DEC-2026-0047",
   "reason": "AI irrigation decision — moisture below threshold"
 }`}
-                    </pre>
+                        </pre>
+                      </div>
+                    </div>
                   </Card>
                 </div>
               </section>
@@ -500,9 +512,11 @@ L5 — Frontend
                     <div className="absolute top-0 right-0 p-4 opacity-10">
                       <Code size={48} />
                     </div>
-                    <pre className="text-xs font-mono text-[var(--color-body)] space-y-2 leading-relaxed overflow-x-auto">
-                      {`CREATE DATABASE tazrout_db;\nCREATE USER tazrout_user WITH PASSWORD 'tazrout_pass123';\nGRANT ALL PRIVILEGES ON DATABASE tazrout_db TO tazrout_user;\nALTER DATABASE tazrout_db OWNER TO tazrout_user;`}
-                    </pre>
+                    <div className="overflow-x-auto custom-scrollbar">
+                      <pre className="text-xs font-mono text-brand-primary/90 space-y-2 leading-relaxed min-w-[500px] sm:min-w-0">
+                        {`CREATE DATABASE tazrout_db;\nCREATE USER tazrout_user WITH PASSWORD 'tazrout_pass123';\nGRANT ALL PRIVILEGES ON DATABASE tazrout_db TO tazrout_user;\nALTER DATABASE tazrout_db OWNER TO tazrout_user;`}
+                      </pre>
+                    </div>
                   </div>
 
                   <div className="flex items-start gap-3 p-4 rounded-xl bg-brand-primary/5 border border-brand-primary/10">
@@ -587,27 +601,27 @@ L5 — Frontend
                     <h3 className="text-sm font-bold text-brand-primary mb-3">
                       {locale === 'ar' ? 'قواعد صارمة' : locale === 'fr' ? 'Règles strictes' : 'Hard Rules'}
                     </h3>
-                    <ul className="text-xs text-[var(--color-muted)] space-y-2">
-                      <li>
-                        - {locale === 'ar' ? 'لا تقم بتعريض منفذ MQTT' : locale === 'fr' ? 'Ne jamais exposer le port MQTT' : 'Never expose MQTT port'}{' '}
-                        <code className="text-brand-primary">1883</code>{' '}
-                        {locale === 'ar' ? 'للإنترنت العام.' : locale === 'fr' ? 'à l’internet public.' : 'to the public internet.'}
-                      </li>
-                      <li>
-                        - {locale === 'ar'
-                          ? 'أبقِ جميع الخدمات داخل LAN المزرعة بدون اعتماد على السحابة.'
-                          : locale === 'fr'
-                            ? 'Gardez tous les services sur le LAN de la ferme, sans dépendances cloud.'
-                            : 'Keep all services on the farm LAN; no cloud dependencies required.'}
-                      </li>
-                      <li>
-                        - {locale === 'ar'
-                          ? 'لوحة التحكم للقراءة غالباً: لا تحكم يدوي بالصمامات (إلا الإيقاف الطارئ).'
-                          : locale === 'fr'
-                            ? 'Dashboard principalement en lecture : pas de contrôle manuel des vannes (sauf arrêt d’urgence).'
-                            : 'Dashboard is read-mostly: no manual valve control (except Emergency Stop).'}
-                      </li>
-                    </ul>
+                      <ul className="text-sm text-[var(--color-muted)] space-y-3">
+                        <li>
+                          - {locale === 'ar' ? 'لا تقم بتعريض منفذ MQTT' : locale === 'fr' ? 'Ne jamais exposer le port MQTT' : 'Never expose MQTT port'}{' '}
+                          <code className="text-brand-primary">1883</code>{' '}
+                          {locale === 'ar' ? 'للإنترنت العام.' : locale === 'fr' ? 'à l’internet public.' : 'to the public internet.'}
+                        </li>
+                        <li>
+                          - {locale === 'ar'
+                            ? 'أبقِ جميع الخدمات داخل LAN المزرعة بدون اعتماد على السحابة.'
+                            : locale === 'fr'
+                              ? 'Gardez tous les services sur le LAN de la ferme, sans dépendances cloud.'
+                              : 'Keep all services on the farm LAN; no cloud dependencies required.'}
+                        </li>
+                        <li>
+                          - {locale === 'ar'
+                            ? 'لوحة التحكم للقراءة غالباً: لا تحكم يدوي بالصمامات (إلا الإيقاف الطارئ).'
+                            : locale === 'fr'
+                              ? 'Dashboard principalement en lecture : pas de contrôle manuel des vannes (sauf arrêt d’urgence).'
+                              : 'Dashboard is read-mostly: no manual valve control (except Emergency Stop).'}
+                        </li>
+                      </ul>
                   </Card>
                   <div className="p-6 rounded-2xl bg-brand-primary/5 border border-brand-primary/10">
                     <p className="text-xs text-[var(--color-muted)] leading-relaxed">
@@ -642,9 +656,11 @@ L5 — Frontend
                       <Terminal size={16} />{' '}
                       {locale === 'ar' ? 'راقب كل رسائل MQTT' : locale === 'fr' ? 'Observer tout le trafic MQTT' : 'Observe all MQTT traffic'}
                     </h3>
-                    <pre className="text-[10px] sm:text-xs font-mono text-[var(--color-body)] leading-relaxed overflow-x-auto">
+                    <div className="overflow-x-auto custom-scrollbar">
+                      <pre className="text-[10px] sm:text-xs font-mono text-brand-primary/90 leading-relaxed min-w-[400px] sm:min-w-0">
 {`mosquitto_sub -t "tazrout/#" -u tazrout_admin -P tazrout123 -v`}
-                    </pre>
+                      </pre>
+                    </div>
                     <p className="mt-3 text-xs text-[var(--color-muted)]">
                       {locale === 'ar'
                         ? 'يجب أن ترى حزم المستشعرات كل 30 ثانية لكل منطقة، بالإضافة إلى تغيّر الحالة والقرارات وACK.'
