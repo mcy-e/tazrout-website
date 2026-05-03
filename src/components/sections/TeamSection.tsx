@@ -51,7 +51,7 @@ export default function TeamSection() {
       id: 'khanfri',
       name: getName('Khanfri Moussa', 'خنفري موسى'),
       role: t.Team.hardware_role,
-      photo: '/assets/team/Mousa.png',
+      photo: '/assets/team/Mousa.jpg',
       github: 'https://github.com/moussakh189/',
       linkedin: 'https://www.linkedin.com/in/moussa-khenfri-b24481320?utm_source=share_via&utm_content=profile&utm_medium=member_android',
     },
