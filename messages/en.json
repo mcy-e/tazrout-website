@@ -1,0 +1,590 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "about": "About",
+    "system": "System",
+    "features": "Future Features",
+    "docs": "Docs",
+    "faq": "FAQ",
+    "help": "Help"
+  },
+  "Hero": {
+    "title1": "TAZROUT",
+    "title2": "Smart Irrigation.",
+    "title3": "Ancient Roots.",
+    "pitch_kicker": "Five students. National School of Cyber Security. Incubator track.",
+    "pitch_badge": "Made in Algeria. Runs offline. Stays on your LAN.",
+    "description": "We’re wiring up irrigation that listens to the field: LoRa links, a small brain on site, and a dashboard you can read in daylight. The visuals nod to Amazigh patterns. The wiring is ours.",
+    "description_vp": "Sensors tell us what the soil and air are doing. When a zone actually needs water, the model says so. You watch everything in Arabic or French on one screen. No cloud subscription. No signal bar out in the rows. Just your farm’s own network.",
+    "cta_explore": "See how it works",
+    "cta_dashboard": "What we’re building next",
+    "cta_contact": "Write to us",
+    "cta_story": "Our story",
+    "scroll_hint": "Keep going"
+  },
+  "Features": {
+    "title": "What you actually get",
+    "subtitle": "Live readings, calls on when to water, several zones at once, Arabic and French in the same room. Your data doesn’t leave the farm.",
+    "monitoring_title": "See the field",
+    "monitoring_desc": "Moisture, temperature, water level. Per zone. As it happens.",
+    "ai_title": "The model decides",
+    "ai_desc": "It reads the sensors and picks a volume when the crop really needs it, not because the clock said so.",
+    "alerts_title": "When something’s wrong",
+    "alerts_desc": "You get a ping. Valves can shut without you running to the pipe first.",
+    "zones_title": "More than one patch",
+    "zones_desc": "Different crops, different corners of the land, each with its own rules.",
+    "lan_title": "No internet required",
+    "lan_desc": "Server, model, and screen sit on the farm network. If the uplink dies, the rows still get a drink.",
+    "ui_title": "Looks like home",
+    "ui_desc": "Patterns and type that feel North African, not a generic white dashboard from nowhere."
+  },
+  "Architecture": {
+    "title": "Everything stays on the farm network",
+    "description": "Five layers, one LAN. Nodes shout over LoRa, the gateway tosses packets into MQTT, the backend and model chew on it, and Flutter shows you what happened. No internet passthrough required.",
+    "hardware_title": "Field Hardware",
+    "hardware_desc": "Sensors + LoRa MCUs",
+    "gateway_title": "Gateway",
+    "gateway_desc": "LoRa Receiver",
+    "broker_title": "MQTT Broker",
+    "broker_desc": "Message Router",
+    "backend_title": "Backend & AI",
+    "backend_desc": "Spring Boot + AI Engine",
+    "frontend_title": "Frontend UI",
+    "frontend_desc": "Flutter Desktop Dashboard"
+  },
+  "Team": {
+    "title": "Who built this",
+    "description": "Five of us at the National School of Cyber Security. Boards, Python, Flutter, radio, all of it. No outsourcing mystery.",
+    "cta": "Meet the Full Team",
+    "frontend_role": "Frontend Developer",
+    "backend_role": "Backend Developer",
+    "ai_role": "AI Engine Developer",
+    "network_role": "Networking Engineer",
+    "hardware_role": "Embedded Systems",
+    "photo_missing": "Photo Coming Soon"
+  },
+  "Install": {
+    "title": "Want this on your land?",
+    "description": "Tazrout is kit plus work on site. You pay for the nodes and gateway, a one time hookup, and later a yearly check in if you want it. The five of us can travel, bolt things down, get the network talking, and show you the screen. A medium field is usually a few hours, sometimes a day if the terrain fights back.",
+    "beta": "We’re still in beta. Full rollout installs and phone lines stay paused until we say otherwise.",
+    "business_title": "How we charge",
+    "business_body": "You buy the hardware (nodes, gateway, on‑farm server stack). We quote travel and commissioning separately. After go‑live you can book an optional yearly walkthrough. Everything runs on your LAN—there is no mandatory cloud subscription.",
+    "email_title": "Project request",
+    "email_desc": "Tell us about your land and timing so we can reply with a tailored estimate. This form is for new installs and budgets—not for a broken valve or dashboard issue.",
+    "email_other_form_hint": "Already running Tazrout and something broke? Use Help → Technical support.",
+    "badge_project": "Quote",
+    "badge_support": "Help",
+    "form_section_contact": "Contact & location",
+    "form_section_scope": "Scope & timing",
+    "required_short": "Required",
+    "call_title": "Need help on a live system?",
+    "call_desc": "Phone scheduling stays paused during beta. For offline sensors, dashboard errors, or valve faults, open a technical ticket so we can triage and reply in order.",
+    "call_cta_support": "Open technical support form",
+    "form_name": "Full name",
+    "form_farm_size": "Farm size (hectares or acres)",
+    "form_email": "Email",
+    "form_wilaya": "Wilaya / region",
+    "form_wilaya_placeholder": "e.g. Annaba",
+    "form_template": "Project template",
+    "form_template_placeholder": "Choose a starting point",
+    "form_template_pilot": "Pilot — 1–2 zones, prove the stack",
+    "form_template_small": "Small farm — 3–5 zones",
+    "form_template_farm": "Larger farm — 6+ zones or multiple blocks",
+    "form_template_custom": "Custom — not sure yet",
+    "form_zones": "Number of irrigation zones",
+    "form_zones_placeholder": "e.g. 4",
+    "form_timeline": "When do you want a first visit?",
+    "form_timeline_placeholder": "Select timeframe",
+    "form_timeline_asap": "As soon as you can",
+    "form_timeline_1_3m": "1–3 months",
+    "form_timeline_3_6m": "3–6 months",
+    "form_timeline_exploring": "Just exploring",
+    "form_phone": "Phone (optional)",
+    "form_phone_placeholder": "+213 …",
+    "form_details": "Site context",
+    "form_name_placeholder": "Your name",
+    "form_farm_size_placeholder": "e.g. 5 ha",
+    "form_email_placeholder": "farmer@example.dz",
+    "form_details_placeholder": "Water source, pipe layout, crops, pain points—anything that helps us quote.",
+    "pricing_title": "Ballpark ranges (DZD, indicative)",
+    "pricing_disclaimer": "Estimates only. We send a written quote after we review your answers; travel outside our usual radius adds cost.",
+    "pricing_pilot": "Roughly 180k–350k — minimal nodes, gateway, first commissioning.",
+    "pricing_small": "Roughly 400k–900k — depends on zones and trenching.",
+    "pricing_farm": "Roughly 900k–2.5M+ — multi‑node layouts and redundancy.",
+    "pricing_custom": "We scope after a short call—could land anywhere on the scale.",
+    "submit_request": "Send project request",
+    "submitting": "Sending…",
+    "inline_success_title": "Request received",
+    "inline_success_body": "We'll email you with questions or a draft quote. During beta, allow up to a few business days.",
+    "send_another": "Send another",
+    "validation_details_min": "Please add a bit more detail (at least 40 characters) so we can quote.",
+    "validation_select_template": "Choose a project template.",
+    "validation_select_timeline": "Choose a timeframe."
+  },
+  "Docs": {
+    "hero_tag": "v2.0 Beta Technical Manual",
+    "hero_title_1": "System",
+    "hero_title_2": "Engineering",
+    "hero_desc": "Official technical documentation for the Tazrout smart irrigation ecosystem. Covering hardware deployment, MQTT protocols, and AI model specifications.",
+    "sidebar_sections": "Sections",
+    "sidebar_deployment": "Deployment Guide",
+    "sidebar_mqtt": "MQTT Topic Tree",
+    "sidebar_database": "Postgres Config",
+    "sidebar_ai": "AI Engine Specs",
+    "security_alert_title": "Security Alert",
+    "security_alert_desc": "The Tazrout system is designed for isolated LAN operation. Do not expose the MQTT port (1883) to the public internet.",
+    "deployment_title": "Complete Deployment",
+    "deployment_desc": "Follow this exact phase-based sequence for installing the central server. The system is tested on Ubuntu 22.04 LTS and requires a minimum of 8GB RAM for the AI engine.",
+    "mqtt_title": "MQTT Topic Tree",
+    "db_title": "PostgreSQL Config",
+    "db_desc": "The backend uses a standard PostgreSQL schema managed by Hibernate. To initialize the database manually for the Spring Boot user, run these commands:",
+    "ai_title": "AI Decision Engine",
+    "ai_model_arch": "Model Architecture",
+    "ai_model_desc": "Tazrout uses a cascading XGBoost model. First, it classifies if a zone requires water. If true, it runs a regression pass to calculate the volume based on evaporation rates.",
+    "ai_training_title": "Training Data",
+    "ai_training_desc": "Trained on 950 samples of arid-climate sensor data. Features include Humidity (22-86%), Temperature (0.7-44.9°C), and Soil Conductivity."
+  },
+  "Footer": {
+    "description": "A complete smart irrigation system with ancient roots and modern intelligence. Built by students at the National School of Cyber Security, Algeria.",
+    "explore": "Explore",
+    "resources": "Resources",
+    "about": "About Us",
+    "school": "National School of Cyber Security"
+  },
+  "Help": {
+    "banner_tag": "Help Center",
+    "banner_title1": "Field",
+    "banner_title2": "Support",
+    "banner_desc": "Quick guidance to troubleshoot common Tazrout issues before contacting our team.",
+    "trouble_title": "Common Problems",
+    "trouble_desc": "Try these quick field checks before calling a technician.",
+    "q1": "Valve is not opening or closing",
+    "a1": "1. Check the physical valve in the field for debris or blockages.\n2. Ensure the cable connecting the valve to the node relay box is securely plugged in.\n3. Check if the node has power.\nIf it persists, use the Emergency Stop on the dashboard and call a technician.",
+    "q2": "Sensor zone is showing as Offline (Red)",
+    "a2": "1. Check the solar panel and battery connection on the sensor node in the field.\n2. Ensure there is no new physical obstruction (like a fallen branch) covering the LoRa antenna.\nIf it doesn't reconnect in 10 minutes, the hardware may need technician servicing.",
+    "q3": "Low Water Pressure Alert",
+    "a3": "1. Inspect the main water line and zone pipes for visible leaks or bursts.\n2. Check if the main water pump has tripped a breaker or lost power.\n3. Ensure the main reservoir has sufficient water.\nIf the pump is faulty, call a technician immediately.",
+    "q4": "Dashboard is not loading or updating",
+    "a4": "1. Ensure your device is connected to the farm's dedicated local network (LAN) and not external cellular data.\n2. Refresh the application.\n3. Check if the central server machine is powered on.\nIf the server is on but data won't load, contact support.",
+    "q5": "System Behavior for Seeding",
+    "a5": "To plant new seeds without AI interference, perform a 'System Shutdown' from the dashboard. Once seeding is finished, turn the system back on. The AI will re-analyze the soil and resume the optimal schedule automatically.",
+    "q6": "Fire Safety Protocol",
+    "a6": "If a thermal anomaly is detected (Red Flame Alert), the system will automatically close all valves to preserve water pressure for emergency use and alert the operator. Inspect the zone immediately.",
+    "quick_title": "Daily Checklist",
+    "quick_desc": "Your daily routine to ensure the farm is running smoothly",
+    "step1_title": "Check System Status",
+    "step1_desc": "Ensure the central dashboard machine is powered on and running.",
+    "step2_title": "Review Field Zones",
+    "step2_desc": "Verify all agricultural zones are reporting green 'Online' status on the dashboard.",
+    "step3_title": "Verify AI Decisions",
+    "step3_desc": "Confirm that the AI engine is scheduling and executing watering cycles as expected.",
+    "step4_title": "Monitor Alerts",
+    "step4_desc": "Check for any amber or red alerts that might require physical inspection of the hardware.",
+    "contact_title": "Still Need Help?",
+    "contact_desc": "If these quick fixes didn't solve your issue, reach out to our team directly. We offer on-site repair and structured email support.",
+    "onsite_title": "On-Site Fix",
+    "onsite_desc": "Hardware failure or severe system issues? Call our technicians and we will come directly to your site to fix the problem.",
+    "email_title": "Email Support",
+    "email_desc": "For non-urgent issues, send us an email. Please use the structured format provided in the link below.",
+    "email_btn": "Open Support Form",
+    "phone_beta": "Not available in Beta",
+    "tech_specs_title": "Technical Specs",
+    "tech_specs_desc": "Access our system documentation, LoRa frequency guides, and hardware blueprints for technicians.",
+    "tech_specs_cta": "Explore System"
+  },
+  "Common": {
+    "menu": "Menu",
+    "back": "Back",
+    "back_to_docs": "Back to documentation hub",
+    "docs_source": "Source"
+  },
+  "Support": {
+    "submitted_title": "Ticket submitted",
+    "submitted_desc": "We have received your request. A technician will review it and contact you shortly.",
+    "back_to_help": "Back to Help Center",
+    "title": "Technical support",
+    "desc": "For existing deployments: sensors, valves, dashboard, or AI behaviour. For a new install or budget estimate, use the project request on the home page (Want this on your land).",
+    "project_form_hint": "New install or quote",
+    "project_form_link": "Go to home — project form",
+    "required_short": "Required",
+    "full_name": "Full name",
+    "full_name_placeholder": "Enter your name",
+    "email": "Email",
+    "email_placeholder": "your@email.com",
+    "farm_site_optional": "Farm or site name (optional)",
+    "farm_site_placeholder": "e.g. Dou farm north block",
+    "zone_id_optional": "Zone ID (optional)",
+    "zone_id_placeholder": "e.g. Zone-A1",
+    "category": "Problem category",
+    "category_placeholder": "Select one",
+    "category_hardware": "Hardware (valves / sensors)",
+    "category_software": "Software / dashboard",
+    "category_ai": "AI / decisions",
+    "category_other": "Other",
+    "severity": "Severity",
+    "severity_placeholder": "How urgent is this?",
+    "severity_low": "Low — can wait a day or two",
+    "severity_medium": "Medium — blocking one zone",
+    "severity_high": "High — safety or total outage",
+    "description": "What happened?",
+    "description_placeholder": "Steps to reproduce, what you expected, what you saw (screenshots welcome in a follow‑up email).",
+    "submit": "Submit support ticket",
+    "submitting": "Submitting…",
+    "beta_note": "During beta, replies may take up to 24 hours. For critical hardware failure, run through the daily checklist on the Help page first.",
+    "validation_category": "Choose a problem category.",
+    "validation_severity": "Choose how urgent this is.",
+    "validation_description_min": "Use at least 30 characters so we can triage."
+  },
+  "FAQ": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Knowledge Base",
+    "desc": "Learn everything about the Tazrout system, from how the AI makes decisions to national data security.",
+    "categories": {
+      "getting-started": "Getting Started",
+      "system-sensors": "System & Sensors",
+      "irrigation": "Irrigation & AI",
+      "connectivity": "Connectivity",
+      "future": "Future Roadmap"
+    },
+    "questions": {
+      "sensors": {
+        "q": "What sensors does Tazrout use?",
+        "a": "Tazrout uses temperature, soil moisture, and water level sensors in each zone. Data is processed locally by an ESP32 and transmitted via long-range LoRa radio."
+      },
+      "ai_decision": {
+        "q": "How does the AI make decisions?",
+        "a": "Our trained machine learning model analyzes sensor data to calculate the exact water volume needed, reducing waste by up to 30% compared to traditional timers."
+      },
+      "offline": {
+        "q": "Does it work without internet?",
+        "a": "Yes. Tazrout is a 100% LAN-only system. The entire software stack runs on a local server in your warehouse, ensuring your data never leaves your farm."
+      },
+      "national_data": {
+        "q": "How do I share data with the Ministry?",
+        "a": "In the future, farmers can opt-in to share anonymized soil data with the Ministry of Agriculture. This helps national water planning while providing you with installation discounts."
+      },
+      "mobile_app": {
+        "q": "Is there a mobile app?",
+        "a": "A mobile companion app is part of our Phase 4 roadmap. It will allow you to monitor your zones and receive emergency alerts remotely via the farm's WiFi."
+      },
+      "fire_detection": {
+        "q": "How does fire detection work?",
+        "a": "Sensor nodes detect rapid thermal spikes. If a spike exceeds a safety threshold, the system triggers a Red Alert and prioritizes water pressure for fire suppression."
+      },
+      "hybrid_control": {
+        "q": "Can I override the AI?",
+        "a": "In Beta, the 'Hybrid' toggle is a future feature. To override the AI currently, you can perform a 'System Shutdown' from the dashboard. Once your manual tasks (like seeding) are finished, restarting the system allows the AI to re-calculate the optimal schedule from scratch."
+      },
+      "power_outage": {
+        "q": "Will it work during a power outage?",
+        "a": "Our Phase 7 'Industrial Hardware' nodes are solar-powered. The central hub requires a battery backup (UPS) to maintain AI decisions during grid failure."
+      }
+    }
+  },
+  "Preview": {
+    "title": "The screen your crew actually opens",
+    "description": "Not a single chart and done. You get zones, history, and the gut feeling that someone wired this for a real shed and real mud.",
+    "alt1": "Tazrout Farming System",
+    "alt2": "Tazrout Irrigation Network",
+    "alt3": "Tazrout Field Sensors"
+  },
+  "About": {
+    "date_range": "October 2025 — April 2026",
+    "title_story_of": "The Story of",
+    "title_tazrout": "Tazrout",
+    "hero_desc": "Five students at the National School of Cyber Security. Seven months. One question: what if the soil could speak? This is how a dorm-room idea became a working irrigation system that runs without internet, makes decisions without cloud servers, and belongs entirely to the farmer.",
+    "scroll_hint": "Scroll the story",
+    "mission_label": "The Mission",
+    "mission_title_1": "Algeria Deserves to Be",
+    "mission_title_green": "Green",
+    "mission_desc": "There are 8.5 million hectares of agricultural land in Algeria. Most of it is irrigated by methods that have not changed in generations. The country loses thirty percent of its irrigation water to waste every year. Tazrout was built to give the farmer a tool that was previously only available to agribusinesses. The sensor nodes cost a fraction of commercial systems. The intelligence runs locally. The farmer retains every decision.",
+    "mission_quote": "\"The stream flows where it is needed. Nothing more. Nothing less.\"",
+    "marketing_quote": "Get the root, make it tazrout",
+    "events": {
+      "0": {
+        "date": "13 October 2025",
+        "title": "The Group is Born",
+        "text": "The Telegram group \"Friourios Five\" was created on the evening of 13 October 2025. The school had forwarded an announcement from Mr. Boghaleb, who managed the NSCS incubator and also taught Business Economics, saying he wanted to hear student project ideas in groups of up to five. Chouaib shared the document. Reda reacted with a heart. Nobody said much else that night. But the gears had already started turning."
+      },
+      "1": {
+        "date": "18 October 2025",
+        "title": "Tazrout Gets Its Name",
+        "text": "The first real meeting happened on 18 October 2025. It was supposed to be at the school, but Fehis joined remotely via a Google Meet link he posted himself at 13:55. The brainstorm produced more than half a dozen ideas: AI road load balancing, a motivational community app, a QR prescription system, a freelancer marketplace. Then Mousa brought up smart irrigation and said he already had a name: Tazrout, the Tamazight word for stream. A vote was held. Tazrout won."
+      },
+      "2": {
+        "date": "29 October 2025",
+        "title": "The Incubator Calls",
+        "text": "The incubator reached out and asked the team to commit to a single idea. The team had narrowed it down to two finalists, but a structured written comparison made the decision clear. They evaluated feasibility, scope, and what could actually be delivered in three to four months. Tazrout was locked in. Suggestion forms were filled out and submitted. The thinking shifted from \"which idea\" to \"how do we actually build this.\""
+      },
+      "3": {
+        "date": "6 December 2025",
+        "title": "Dividing the Work",
+        "text": "By early December, the conversation moved to architecture. Fehis proposed a 3-server, 2-field split. Chouaib suggested five independent modules, each treated like a standalone API service, with integration testing a month before the deadline. Sellah claimed the AI Engine first. Then Chouaib walked with Fehis to Professor Berghout at the NSCS, who told them handling both frontend and backend was too much for one person. Fehis took the backend, the schema design, and the database. Over lunch, Fehis confirmed. That evening, Mousa chose ESP32. By nightfall, Reda sent a message claiming Networking. Chouaib was left with the frontend."
+      },
+      "4": {
+        "date": "7–8 December 2025",
+        "title": "The Tech Stack Sprint",
+        "text": "A two-day Discord session over the December holidays. Fehis, Sellah, and Reda explained what each layer needed from the others. The second day, Chouaib and Mousa finalised the remaining pieces. The initial stack was set: FastAPI and HTTP. Everyone went to work. Chouaib entered the design phase. Fehis started the database schema. Sellah began the ML pipeline. Mousa wrote the first ESP32 state machine. The period before 1 February 2026 was named the Study Phase. Everything after it was execution."
+      },
+      "5": {
+        "date": "1 February 2026",
+        "title": "Execution Begins",
+        "text": "1 February marked the official start. Weekly progress reports were filed. Mousa pinned the ESP32 documentation on 12 March alongside a formal meeting report. Internal documentation circulated. The MQTT implementation report was drafted. But something was becoming obvious: FastAPI and HTTP were not going to cut it for a real IoT deployment. The conversation about pivoting was already happening privately."
+      },
+      "6": {
+        "date": "Before Ramadan",
+        "title": "Project Reborn",
+        "text": "Reda called a serious meeting at the school. What followed became known internally as Project Reborn. The entire communication layer was scrapped. FastAPI was replaced with Spring Boot. HTTP was replaced with MQTT over the Mosquitto broker. JSON packet formats were locked down by all five members. A document titled \"TAZROUT REBORN\" was shared and pinned. From this moment on, every team member was writing production code."
+      },
+      "7": {
+        "date": "Ramadan — March 2026",
+        "title": "The Grind",
+        "text": "Ramadan brought the most intense work period. The timestamps tell the story: messages at 5am during Sahour, Mousa sharing specs and pinning documents at 6am. Reda promising to push \"max\" over the weekend. The team ran on deadlines and the quiet understanding that five separate modules needed to talk to each other before the month ended. Tensions surfaced. They always do when the thing you are building actually matters. But the code kept moving forward."
+      },
+      "8": {
+        "date": "23 April 2026",
+        "title": "It Works",
+        "text": "Chouaib opened five terminal windows. He started the Mosquitto broker. He launched the sensor simulator. He ran Spring Boot. He fired the AI Engine. He opened the Flutter dashboard. The simulator published packets. The backend stored them. The AI returned valve decisions with reasons. The dashboard updated. Every layer that had been built independently by a different person on a different machine in a different city came together and worked. Nobody celebrated out loud. The logs did it for them."
+      }
+    }
+  },
+  "FutureFeatures": {
+    "title": "Future Roadmap",
+    "subtitle": "Beyond the Beta",
+    "description": "Tazrout is not just a student project. We are building a scalable national agricultural infrastructure for Algeria's water security.",
+    "phases": {
+      "1": {
+        "title": "National Data Platform",
+        "subtitle": "Policy Intelligence",
+        "description": "Aggregating anonymized field data into a central platform for the Ministry of Agriculture. Transforming raw sensor telemetry into structured policy intelligence to optimize water distribution at a national scale.",
+        "icon": "Database"
+      },
+      "2": {
+        "title": "Climate & Weather",
+        "subtitle": "Predictive Management",
+        "description": "Integrating hyper-local weather forecasting with soil moisture data. Moving from reactive schedules to predictive irrigation that anticipates heatwaves and natural rainfall to minimize waste.",
+        "icon": "Cloud"
+      },
+      "3": {
+        "title": "Fire & Disaster Safety",
+        "subtitle": "Advanced Protection",
+        "description": "Implementing thermal anomaly detection and fire risk prediction. Protecting Algerian fields from environmental hazards through real-time emergency stop protocols and disaster prevention alerting.",
+        "icon": "Flame"
+      },
+      "4": {
+        "title": "Farmer Mobile App",
+        "subtitle": "Remote Monitoring",
+        "description": "Developing a secure mobile companion app. Allowing farmers to monitor their zones, receive emergency alerts, and override AI decisions remotely from anywhere on or off the farm.",
+        "icon": "Smartphone"
+      },
+      "5": {
+        "title": "Farm Surveillance",
+        "subtitle": "AI Security Layer",
+        "description": "Integrating CCTV and entry monitoring into the system. Superior to traditional human security, providing automated alerts for unauthorized access and physical tampering of sensor nodes.",
+        "icon": "Shield"
+      },
+      "6": {
+        "title": "Hybrid Control System",
+        "subtitle": "Human-AI Synergy",
+        "description": "Seamlessly switching between autonomous AI irrigation and manual human override. Giving the farmer the final word with a single click, while the AI manages the complexity of the 24/7 schedule.",
+        "icon": "Hand"
+      },
+      "7": {
+        "title": "Industrial Hardware V2",
+        "subtitle": "Ruggedized Deployment",
+        "description": "Standardized, industrial-grade sensor kits with solar-powered LoRa nodes. Designed to survive Algeria's harshest field conditions while maintaining ultra-low maintenance requirements for large farms.",
+        "icon": "Cpu"
+      },
+      "8": {
+        "title": "Voice Accessibility",
+        "subtitle": "Native Audio Alerts",
+        "description": "Democratizing technology through localized audio alerts in Arabic and Tamazight. Ensuring that every farmer, regardless of digital literacy, can hear the heartbeat of their farm in their native tongue.",
+        "icon": "Volume2"
+      },
+      "9": {
+        "title": "Ecosystem Expansion",
+        "subtitle": "Plant Health Suite",
+        "description": "Collaborating with plant disease detection experts. Adding multi-spectrum sensors to predict illness and disease outbreaks before they are visible to the naked eye.",
+        "icon": "Heart"
+      }
+    }
+  },
+  "System": {
+    "banner_title": "How It Works",
+    "banner_desc": "Explore each layer of the Tazrout architecture. Drag to rotate, scroll to zoom.",
+    "summary_title": "Architecture Summary",
+    "summary_desc": "A robust 5-layer LAN-only architecture running locally without internet.",
+    "controls": "Drag to rotate • Scroll to zoom",
+    "loading": "Loading...",
+    "scroll_to_load": "Scroll to load model",
+    "stops": {
+      "0": {
+        "tag": "System Overview",
+        "title": "The Full Ecosystem",
+        "desc": "The Tazrout system integrates field sensors, a water supply, LoRa communication, and a central AI-powered server — all running locally without internet."
+      },
+      "1": {
+        "tag": "Layer 1 — Field Hardware",
+        "title": "ESP32 Sensor Node",
+        "desc": "Each field node reads soil moisture, temperature, and water levels. Nodes are powered by a direct wire connection or a solar panel depending on the installation. Data is transmitted via long-range LoRa radio."
+      },
+      "2": {
+        "tag": "Layer 2 — Water Supply",
+        "title": "Reservoir & Valves",
+        "desc": "The reservoir feeds irrigation pipes through AI-controlled solenoid valves. A threshold sensor protects the pump from dry-runs when the water level drops below a safe margin."
+      },
+      "3": {
+        "tag": "Layer 3 — Central Hub",
+        "title": "The Warehouse",
+        "desc": "The warehouse is the physical home of the system infrastructure. Its interior houses the central server unit, and its exterior serves as the operator control point."
+      },
+      "4": {
+        "tag": "Inside the Warehouse",
+        "title": "Server Rack / Unity",
+        "desc": "Inside the warehouse, the server unit runs the full software stack: Spring Boot backend, Mosquitto MQTT broker, PostgreSQL database, and the AI Engine — all on a single local machine."
+      },
+      "5": {
+        "tag": "Outside the Warehouse",
+        "title": "Operator Dashboard",
+        "desc": "The wall-mounted outdoor touchscreen is the farmer's window into the system. It displays real-time zone statuses, sensor readings, AI decisions, and provides the Emergency Stop."
+      },
+      "6": {
+        "tag": "On the Roof",
+        "title": "LoRa Gateway Antenna",
+        "desc": "Mounted on the warehouse roof, the LoRa antenna receives long-range radio packets from every sensor node across the farm, publishing data to the MQTT broker inside."
+      }
+    }
+  },
+  "Pitch": {
+    "problem_title": "What’s broken",
+    "problem_headline": "Rows don’t need a calendar. They need numbers.",
+    "problem_desc": "Water’s tight and weather jumps around. Timers keep watering right after rain or skip when the heat spikes. Nobody looked at the soil before opening the valve.",
+    "problem_sub": "The glossy kits from abroad want fibre, a fat cheque, and someone on retainer. Most farms here never get that stack. They get a timer and hope.",
+    "solution_title": "What we’re doing",
+    "solution_headline": "The model opens the valve. The node does what it’s told. You watch.",
+    "solution_desc": "We chained it all on one LAN: little ESP boards in the dirt, LoRa to a Pi at the shed, MQTT in the middle, Spring and Postgres holding history, Python deciding the valve, Flutter on a screen you can lean on. We ran it end to end in simulation before bragging.",
+    "stat_water_waste": "Water poured on the wrong day",
+    "stat_manual_error": "Still guessing by habit",
+    "value_title": "Why bother with us",
+    "value_offline_title": "It runs in the shed",
+    "value_offline_desc": "Radio, broker, server on site. Nobody bills you per API call overseas.",
+    "value_ai_title": "Valves listen to the model",
+    "value_ai_desc": "Routine opens and closes come from the engine. You browse data. Big red stop still exists.",
+    "value_local_title": "Written for here",
+    "value_local_desc": "Arabic and French in one UI. Data sits on your machine, not someone else’s continent."
+  },
+  "PitchDeck": {
+    "evidence_kicker": "Where we are",
+    "evidence_title": "It runs in the lab. We want it in the dirt.",
+    "evidence_subtitle": "Every layer talks to the next for real. No fake demo video layered on PowerPoint.",
+    "evidence_items": [
+      {
+        "title": "Pipe to pipe",
+        "body": "Fake sensors into MQTT, Java saving rows, the model spitting a valve call, Flutter lighting up. One chain."
+      },
+      {
+        "title": "Same stack we’d ship",
+        "body": "Spring and Postgres, Mosquitto in the middle, Python on the brain. Not a weekend Flask sketch."
+      },
+      {
+        "title": "Built for patchy signal",
+        "body": "LoRa stretches where LTE won’t. The dashboard never needed the open internet anyway."
+      },
+      {
+        "title": "Someone answers the phone",
+        "body": "Incubator folks poke us when we pitch past class. Keeps the story honest."
+      }
+    ],
+    "flow_kicker": "Seven beats",
+    "flow_title": "From dirt reading to valve click",
+    "flow_subtitle": "Each step leaves a trace you can grep or point at on screen.",
+    "flow_steps": [
+      {
+        "name": "Sense",
+        "body": "Nodes wake up on a timer, read moisture, air, water height, whatever we pinned."
+      },
+      {
+        "name": "Send",
+        "body": "LoRa flings a small JSON blob at the gateway. No café WiFi required."
+      },
+      {
+        "name": "Collect",
+        "body": "Gateway unpacks it and drops the row on Mosquitto for whoever listens."
+      },
+      {
+        "name": "Store",
+        "body": "Java lands it in Postgres and serves charts if you ask nice."
+      },
+      {
+        "name": "Decide",
+        "body": "The model chews the stream and posts what it thinks plus a short why."
+      },
+      {
+        "name": "Act",
+        "body": "MQTT fans out, gateway pushes radio down, relay snaps. Routine paths only."
+      },
+      {
+        "name": "Check",
+        "body": "Acks bubble back. The screen shows the valve state you expect."
+      }
+    ],
+    "matrix_kicker": "Where we sit",
+    "matrix_title": "Cheap enough to try. Smart enough to trust.",
+    "matrix_subtitle": "Big vendors chase recurring cloud cash. We chase a hose that opens when the ground asks.",
+    "matrix_note": "We’re aiming at the gap: small purse, no fibre, still want a brain between rain and root.",
+    "matrix_cell_a": "Big brand cloud rigs",
+    "matrix_cell_b": "Timers and elbow grease",
+    "market_kicker": "Who pays attention",
+    "market_title": "Start small, prove the water bill",
+    "market_p1": "We count real coops and pilot fields, not pretend market share on a slide. Off the shelf cloud rigs don’t price for scattered plots.",
+    "market_p2": "Next step is a few installs that don’t embarrass us on water saved and uptime. Then we knock on bigger doors with receipts.",
+    "market_highlight": "We’re already talking to people who grow things for a living. That beats cold email.",
+    "arch_kicker": "Layers",
+    "arch_title": "Five slices. One cable run.",
+    "arch_cta": "Wander the diagram",
+    "competitive_kicker": "Against what",
+    "competitive_title": "No fairy tales",
+    "competitive_subtitle": "Everyone sells peace of mind. Here’s the trade.",
+    "competitive_col_limit": "Where it hurts",
+    "competitive_col_answer": "How we answer",
+    "competitive_rows": [
+      {
+        "who": "Famous cloud irrigation",
+        "them": "Works if you already bought fibre and a lawyer on retainer.",
+        "us": "LAN first. Your soil stays yours. Radio reaches the back forty."
+      },
+      {
+        "who": "Garage Arduino stack",
+        "them": "Fun weekend. Ugly when the inspector asks who signed off.",
+        "us": "Logs, stop button, two languages on the glass."
+      },
+      {
+        "who": "Hope and a hose timer",
+        "them": "Cheap until the dry week hits.",
+        "us": "Sensor says drink. Model opens. You measure what changed."
+      }
+    ],
+    "roadmap_kicker": "Dates",
+    "closing_kicker": "Plain talk",
+    "closing_title": "We want mud on the tyres, not another slideshow.",
+    "closing_body": "If you run land, fund pilots, or mentor hardware teams, we’d love an intro. Help us move this off the bench without losing the plot.",
+    "closing_quote": "\"Student project on paper. Dry fields in real life. Same hunger.\"",
+    "closing_cta_primary": "Installation enquiry",
+    "closing_cta_secondary": "Technical docs",
+    "closing_hint": "Scroll down for the form and the beta note. Same inbox either way."
+  },
+  "Roadmap": {
+    "title": "How we got here, where we’re headed",
+    "subtitle": "Ink still wet on some milestones.",
+    "m1_date": "Dec 2025",
+    "m1_title": "First ideas on paper",
+    "m2_date": "Feb 2026",
+    "m2_title": "Bits moving separately",
+    "m3_date": "Apr 2026",
+    "m3_title": "Whole loop in one room",
+    "m4_date": "2027",
+    "m4_title": "Real field, real sensors",
+    "m5_date": "2028",
+    "m5_title": "Country scale data if we earn it"
+  }
+}
