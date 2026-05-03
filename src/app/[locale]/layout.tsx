@@ -23,13 +23,14 @@ export const metadata: Metadata = {
 
 import { LocaleProvider } from '@/components/LocaleProvider'
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params: { locale }
+  params
 }: {
   children: React.ReactNode
-  params: { locale: 'ar' | 'en' | 'fr' }
+  params: Promise<{ locale: string }>
 }) {
+  const { locale } = await params
   const dir = locale === 'ar' ? 'rtl' : 'ltr'
   
   return (
@@ -53,7 +54,7 @@ export default function RootLayout({
         />
       </head>
       <body className="flex min-h-screen flex-col bg-[var(--color-background)]">
-        <LocaleProvider locale={locale}>
+        <LocaleProvider locale={locale as 'ar' | 'en' | 'fr'}>
           <Navbar />
           <main className="flex-1 pt-16 sm:pt-20">{children}</main>
           <Footer />

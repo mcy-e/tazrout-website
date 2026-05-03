@@ -7,7 +7,7 @@ import { loadDocMarkdown } from '@/lib/docs/load-doc'
 import DocMarkdownBody from '@/components/docs/DocMarkdownBody'
 
 type Props = {
-  params: { locale: string; slug: string }
+  params: Promise<{ locale: string; slug: string }>
 }
 
 export async function generateStaticParams() {
@@ -17,7 +17,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const entry = getDocEntry(params.slug)
+  const { slug } = await params
+  const entry = getDocEntry(slug)
   if (!entry) {
     return { title: 'Documentation' }
   }
@@ -28,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function DocSlugPage({ params }: Props) {
-  const { locale, slug } = params
+  const { locale, slug } = await params
   const entry = getDocEntry(slug)
   if (!entry) {
     notFound()

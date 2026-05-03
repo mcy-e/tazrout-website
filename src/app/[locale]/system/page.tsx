@@ -3,7 +3,8 @@ import InteractiveArchitecture from '@/components/sections/InteractiveArchitectu
 import ArchitectureDiagram from '@/components/sections/ArchitectureDiagram'
 import { getDictionary } from '@/lib/dictionary'
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
   const t = await getDictionary(locale as any)
   return {
     title: t.System.banner_title,
@@ -11,7 +12,8 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   }
 }
 
-export default async function SystemPage({ params: { locale } }: { params: { locale: string } }) {
+export default async function SystemPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
   const t = await getDictionary(locale as any)
   const system = t.System
 
