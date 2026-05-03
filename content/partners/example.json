@@ -1,8 +1,0 @@
-{
-  "name": "Tazrout Firmware",
-  "owner": "Team Member Name",
-  "repo": "https://github.com/username/tazrout-firmware",
-  "description": "ESP32 firmware handling sensor reading, LoRa transmission, and local valve control.",
-  "status": "in-progress",
-  "docPath": "/docs/firmware"
-}
