@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { inter, lora } from '@/lib/fonts'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import Script from 'next/script'
 import '@/styles/globals.css'
 
 export const metadata: Metadata = {
@@ -36,7 +37,9 @@ export default async function RootLayout({
   return (
     <html lang={locale} dir={dir} className={`${inter.variable} ${lora.variable}`}>
       <head>
-        <script
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function() {

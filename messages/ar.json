@@ -195,8 +195,9 @@
   "Common": {
     "menu": "القائمة",
     "back": "رجوع",
-    "back_to_docs": "العودة إلى مركز التوثيق",
-    "docs_source": "المصدر"
+    "back_to_docs": "رجوع إلى مركز التوثيق",
+    "docs_source": "المصدر",
+    "language": "اللغة"
   },
   "Support": {
     "submitted_title": "تم إرسال الطلب!",

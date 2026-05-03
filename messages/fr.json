@@ -196,7 +196,8 @@
     "menu": "Menu",
     "back": "Retour",
     "back_to_docs": "Retour au centre de documentation",
-    "docs_source": "Source"
+    "docs_source": "Source",
+    "language": "Langue"
   },
   "Support": {
     "submitted_title": "Ticket envoyé !",
