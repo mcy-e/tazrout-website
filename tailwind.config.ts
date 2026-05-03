@@ -11,14 +11,14 @@ const config: Config = {
       colors: {
         // ── Tazrout Brand Colors (from design system) ──
         brand: {
-          primary:   '#4CAF50',   // Chateau Green
-          accent:    '#258439',   // Deep Accent
-          deep:      '#141C16',   // Darkest bg
-          mid:       '#182319',   // Mid dark bg
-          surface:   '#243128',   // Card surface
-          error:     '#E94E31',   // Alert red
-          blue:      '#549DF6',   // Chart blue
-          amber:     '#FFB74D',   // Chart amber
+          primary:   'var(--color-primary)',   // Chateau Green
+          accent:    'var(--color-primary-dark)',   // Deep Accent
+          deep:      'var(--color-background)',   // Darkest bg
+          mid:       'var(--color-background-mid)',   // Mid dark bg
+          surface:   'var(--color-surface)',   // Card surface
+          error:     'var(--color-error)',   // Alert red
+          blue:      'var(--color-series-blue)',   // Chart blue
+          amber:     'var(--color-series-amber)',   // Chart amber
         },
         // ── Semantic aliases ──
         background: 'var(--color-background)',
@@ -28,7 +28,7 @@ const config: Config = {
       },
       fontFamily: {
         sans:    ['Inter', 'var(--font-inter)', 'sans-serif'],
-        heading: ['Poppins', 'var(--font-poppins)', 'sans-serif'],
+        heading: ['Lora', 'var(--font-lora)', 'serif'],
       },
       // Extend with design system spacing/radius when _references are added
       borderRadius: {
@@ -38,6 +38,7 @@ const config: Config = {
         'fade-up':   'fadeUp 0.6s ease forwards',
         'glow-pulse': 'glowPulse 3s ease-in-out infinite',
         'float':     'float 6s ease-in-out infinite',
+        'icon-wiggle': 'iconWiggle 2.5s ease-in-out infinite',
       },
       keyframes: {
         fadeUp: {
@@ -51,6 +52,11 @@ const config: Config = {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%':      { transform: 'translateY(-12px)' },
+        },
+        iconWiggle: {
+          '0%, 100%': { transform: 'rotate(0deg) scale(1)' },
+          '25%':      { transform: 'rotate(-4deg) scale(1.05)' },
+          '75%':      { transform: 'rotate(4deg) scale(1.05)' },
         },
       },
     },
