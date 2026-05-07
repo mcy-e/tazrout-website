@@ -29,6 +29,7 @@ const config: Config = {
       fontFamily: {
         sans:    ['Inter', 'var(--font-inter)', 'sans-serif'],
         heading: ['Lora', 'var(--font-lora)', 'serif'],
+        mono:    ['JetBrains Mono', 'var(--font-mono)', 'ui-monospace', 'monospace'],
       },
       // Extend with design system spacing/radius when _references are added
       borderRadius: {

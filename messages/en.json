@@ -14,7 +14,7 @@
     "title3": "Ancient Roots.",
     "pitch_kicker": "Five students. National School of Cyber Security. Incubator track.",
     "pitch_badge": "Made in Algeria. Runs offline. Stays on your LAN.",
-    "description": "Tazrout is an autonomous AI-driven IoT ecosystem for precision agriculture — LoRa nodes in the field, a local AI brain, and a multilingual dashboard. Built to eliminate water waste and stay entirely offline. The wiring is ours.",
+    "description": "Small boards in the dirt, a LoRa gateway on the shed roof, a local AI brain making valve calls, and a screen in Arabic or French showing what happened. No internet. No cloud bill. All wired by us.",
     "description_vp": "Sensors read what the soil and air are doing in real time. When a zone actually needs water, the model decides. You watch everything in Arabic or French on one screen. No cloud subscription. No signal bar out in the rows. Predictive intelligence that lives on your farm.",
     "cta_explore": "See how it works",
     "cta_dashboard": "What we’re building next",
@@ -68,7 +68,7 @@
     "description": "Tazrout is kit plus work on site. You pay for the nodes and gateway, a one time hookup, and later a yearly check in if you want it. The five of us can travel, bolt things down, get the network talking, and show you the screen. A medium field is usually a few hours, sometimes a day if the terrain fights back.",
     "beta": "We’re still in beta. Full rollout installs and phone lines stay paused until we say otherwise.",
     "business_title": "Three plans, one entry point",
-    "business_body": "Plan 1 — Implementation \u0026 Setup: full hardware infrastructure deployment, on-site system integration and sensor configuration. One-time Capex fee based on BOM costs and labor. Start here, then choose between Plan 2 or Plan 3.\n\nPlan 2 — Subscription for Monitoring \u0026 Support: scheduled technical maintenance and software updates, periodic sensor recalibration and system health checks, plus pay-per-feature upgrades like fire and weather detection. Recurring monthly or yearly fee (15–20% of hardware value).\n\nPlan 3 — On-Demand: pay-per-incident support for non-subscribers, on-call hardware repair and troubleshooting, emergency site visits and component replacement. Fixed fee per intervention.\n\nEverything runs on your LAN. No mandatory cloud subscription.",
+    "business_body": "Start with Plan 1: we come to your land, wire the nodes, run the cables, and hand you a working screen. You pay once for the hardware and our labor.\n\nPlan 2 is a yearly check-in: we recalibrate sensors, push software updates, and keep the system honest. Fifteen to twenty percent of what you paid for hardware.\n\nIf you want no subscription, Plan 3 is pay-when-broken: we come when something fails, you pay for the visit.\n\nNothing calls home. No bill from a server you have never seen.",
     "email_title": "Project request",
     "email_desc": "Tell us about your land and timing so we can reply with a tailored estimate. This form is for new installs and budgets—not for a broken valve or dashboard issue.",
     "email_other_form_hint": "Already running Tazrout and something broke? Use Help → Technical support.",
@@ -352,60 +352,60 @@
   "FutureFeatures": {
     "title": "Future Roadmap",
     "subtitle": "Beyond the Beta",
-    "description": "Tazrout is not just a student project. We are building a scalable national agricultural infrastructure for Algeria's water security.",
+    "description": "The system runs in a lab. The goal is ten farms by 2028.",
     "phases": {
       "1": {
         "title": "National Data Platform",
         "subtitle": "Policy Intelligence",
-        "description": "Aggregating anonymized field data into a central platform for the Ministry of Agriculture. Transforming raw sensor telemetry into structured policy intelligence to optimize water distribution at a national scale.",
+        "description": "Pooling anonymized field readings into a platform the Ministry of Agriculture can actually query. Soil data turned into something that shapes water policy.",
         "icon": "Database"
       },
       "2": {
         "title": "Climate & Weather",
         "subtitle": "Predictive Management",
-        "description": "Integrating hyper-local weather forecasting with soil moisture data. Moving from reactive schedules to predictive irrigation that anticipates heatwaves and natural rainfall to minimize waste.",
+        "description": "Tomorrow's rain forecast fed into today's watering schedule. The model sees a storm coming and skips the morning cycle.",
         "icon": "Cloud"
       },
       "3": {
         "title": "Fire & Disaster Safety",
         "subtitle": "Advanced Protection",
-        "description": "Implementing thermal anomaly detection and fire risk prediction. Protecting Algerian fields from environmental hazards through real-time emergency stop protocols and disaster prevention alerting.",
+        "description": "Sensor nodes watch for thermal spikes. If the numbers say fire, every valve shuts and water pressure holds for what matters next.",
         "icon": "Flame"
       },
       "4": {
         "title": "Farmer Mobile App",
         "subtitle": "Remote Monitoring",
-        "description": "Developing a secure mobile companion app. Allowing farmers to monitor their zones, receive emergency alerts, and override AI decisions remotely from anywhere on or off the farm.",
+        "description": "A phone app for the farmer on the other side of the field. Zone status, alerts, and a stop button. Runs on the farm's WiFi.",
         "icon": "Smartphone"
       },
       "5": {
         "title": "Farm Surveillance",
         "subtitle": "AI Security Layer",
-        "description": "Integrating CCTV and entry monitoring into the system. Superior to traditional human security, providing automated alerts for unauthorized access and physical tampering of sensor nodes.",
+        "description": "Cameras and entry sensors on the same network. If someone touches a node that should not be touched, the dashboard knows first.",
         "icon": "Shield"
       },
       "6": {
         "title": "Hybrid Control System",
-        "subtitle": "Human-AI Synergy",
-        "description": "Seamlessly switching between autonomous AI irrigation and manual human override. Giving the farmer the final word with a single click, while the AI manages the complexity of the 24/7 schedule.",
+        "subtitle": "You still call the shots",
+        "description": "The AI handles the 3am watering schedule. You take the wheel when you need to. One button is all it takes.",
         "icon": "Hand"
       },
       "7": {
         "title": "Industrial Hardware V2",
         "subtitle": "Ruggedized Deployment",
-        "description": "Standardized, industrial-grade sensor kits with solar-powered LoRa nodes. Designed to survive Algeria's harshest field conditions while maintaining ultra-low maintenance requirements for large farms.",
+        "description": "Waterproof enclosures, solar panels, industrial connectors. Hardware that does not flinch when Batna hits 42 degrees in July.",
         "icon": "Cpu"
       },
       "8": {
         "title": "Voice Accessibility",
         "subtitle": "Native Audio Alerts",
-        "description": "Democratizing technology through localized audio alerts in Arabic and Tamazight. Ensuring that every farmer, regardless of digital literacy, can hear the heartbeat of their farm in their native tongue.",
+        "description": "Audio alerts in Arabic and Tamazight. A farmer who cannot read the screen still hears what went wrong.",
         "icon": "Volume2"
       },
       "9": {
         "title": "Ecosystem Expansion",
         "subtitle": "Plant Health Suite",
-        "description": "Collaborating with plant disease detection experts. Adding multi-spectrum sensors to predict illness and disease outbreaks before they are visible to the naked eye.",
+        "description": "Sensors that catch disease before it shows on leaves. Built with researchers who study this for a living.",
         "icon": "Heart"
       }
     }
@@ -422,7 +422,7 @@
       "0": {
         "tag": "System Overview",
         "title": "The Full Ecosystem",
-        "desc": "The Tazrout system integrates field sensors, a water supply, LoRa communication, and a central AI-powered server — all running locally without internet."
+        "desc": "The Tazrout system connects field sensors, a water supply, LoRa radio, and a central AI server, all running locally without internet."
       },
       "1": {
         "tag": "Layer 1 — Field Hardware",
@@ -472,7 +472,7 @@
     "value_ai_title": "Valves listen to the model",
     "value_ai_desc": "Routine opens and closes come from the engine. You browse data. Big red stop still exists.",
     "value_local_title": "More than one patch",
-    "value_local_desc": "Different crops, different corners of the land — each zone with its own watering rules."
+    "value_local_desc": "Different crops, different corners of the land. Each zone has its own watering rules."
   },
   "PitchDeck": {
     "evidence_kicker": "Where we are",
@@ -552,23 +552,23 @@
       {
         "who": "Netafim / Lindsay",
         "them": "Cloud-dependent, high import cost. No offline mode. No local training data.",
-        "us": "Offline-capable. AI-controlled valves. Trained on Algerian arid-climate data. Local BOM cost."
+        "us": "Offline-capable. Valves wired to the local AI. Trained on Algerian arid-climate data. Your hardware cost, not a cloud subscription."
       },
       {
         "who": "Generic IoT kits",
         "them": "Low cost but no AI, no offline capability, partial cloud dependency.",
-        "us": "Full AI decision engine. Local data, no cloud. SMS alerts for feature phones."
+        "us": "Full AI decision engine on your LAN. No cloud dependency. No recurring fee for data you already own."
       },
       {
         "who": "Timer and hope",
         "them": "Cheap until the dry week hits. No data, no visibility.",
-        "us": "Sensor-driven, model-controlled. Multiple zones, each with its own rules."
+        "us": "Sensor-driven, model-controlled. Multiple zones each with their own rules. No guessing, no timers."
       }
     ],
     "roadmap_kicker": "Dates",
     "closing_kicker": "Plain talk",
     "closing_title": "We want mud on the tyres, not another slideshow.",
-    "closing_body": "Our ask: validation as a deployable pilot-ready proof-of-concept. A connection with INRAA or an agricultural cooperative. Access to one pilot field (200–500 m²). Vision 2028: 10+ connected installations across multiple wilayas, a national agricultural data platform feeding policy and research, and AI-driven irrigation for every Algerian farmer.",
+    "closing_body": "One pilot field, 200 to 500 square metres. A link to INRAA or a cooperative willing to let us put nodes in real soil. That is the ask.\n\nBy 2028: ten sites running, a data platform the Ministry can actually query, and a setup small enough that any Algerian farmer can afford it.",
     "closing_quote": "\"Student project on paper. Dry fields in real life. Same hunger.\"",
     "closing_cta_primary": "Installation enquiry",
     "closing_cta_secondary": "Technical docs",

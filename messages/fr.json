@@ -14,7 +14,7 @@
     "title3": "Racines Anciennes.",
     "pitch_kicker": "Cinq étudiants. École nationale supérieure de cybersécurité. Fil incubateur.",
     "pitch_badge": "Fabriqué en Algérie. Hors ligne. Ça reste sur ton LAN.",
-    "description": "Tazrout est un écosystème IoT autonome propulsé par l'IA pour l'agriculture de précision — des nœuds LoRa sur le terrain, un cerveau IA local et un tableau de bord multilingue. Conçu pour éliminer le gaspillage d'eau et fonctionner entièrement hors ligne. Le code vient de nous.",
+    "description": "Des cartes dans la terre, une passerelle LoRa sur le toit du hangar, un moteur IA local qui commande les vannes, et un ecran en arabe ou en francais qui montre ce qui s est passe. Pas d internet. Pas de facture cloud. Tout cable par nous.",
     "description_vp": "Les capteurs lisent le sol et l'air en temps réel. Quand une zone a vraiment besoin d'eau, le modèle décide. Tu vois tout en arabe ou en français sur un seul écran. Pas d'abonnement cloud. Pas besoin de réseau au milieu des rangs. Une intelligence prédictive qui vit sur ta ferme.",
     "cta_explore": "Voir comment c’est fait",
     "cta_dashboard": "La suite qu’on vise",
@@ -68,7 +68,7 @@
     "description": "Tazrout c’est du matériel plus du boulot sur site. Tu paies les nœuds et la passerelle, une mise en route une fois, puis une présence annuelle si tu veux. Les cinq peuvent venir visser, faire parler le réseau et te montrer l’écran. Un champ moyen, souvent quelques heures, parfois une journée si le terrain résiste.",
     "beta": "On est encore en bêta. Les grosses installations et la ligne téléphonique restent en pause jusqu’à nouvel ordre.",
     "business_title": "Trois plans, un seul point d'entrée",
-    "business_body": "Plan 1 — Installation & Mise en service : déploiement complet de l'infrastructure matérielle, intégration sur site et configuration des capteurs. Frais Capex unique basé sur la nomenclature (BOM). Commencez ici, puis choisissez entre le Plan 2 ou le Plan 3.\n\nPlan 2 — Abonnement de Support : maintenance technique planifiée et mises à jour logicielles, recalibrage périodique et contrôles système. Frais récurrents pour assurer la pérennité de votre installation.\n\nPlan 3 — À la demande : support par incident pour les non-abonnés, réparations matérielles sur appel et visites d'urgence. Frais fixe par intervention.\n\nTout tourne sur votre LAN. Aucun abonnement cloud obligatoire.",
+    "business_body": "Commencer par le Plan 1 : on vient sur ton terrain, on cable les noeuds, on tire les fils et on te remet un ecran qui marche. Tu paies une fois pour le materiel et notre travail.\n\nLe Plan 2 c est un passage annuel : on recalibre les capteurs, on pousse les mises a jour logiciel et on garde le systeme honnete. Quinze a vingt pour cent de ce que tu as paye pour le materiel.\n\nSi tu veux pas d abonnement, le Plan 3 c est du pay-per-panne : on vient quand quelque chose lache, tu paies la visite.\n\nRien ne contacte l exterieur. Aucune facture d un serveur que tu n as jamais vu.",
     "email_title": "Demande de projet",
     "email_desc": "Décrivez votre terrain et vos délais pour recevoir une estimation adaptée. Ce formulaire sert aux nouvelles installations — pas aux pannes en cours.",
     "email_other_form_hint": "Tazrout déjà en place et un souci ? Utilisez Aide → Support technique.",
@@ -352,60 +352,60 @@
   "FutureFeatures": {
     "title": "Feuille de Route",
     "subtitle": "Au-delà de la Bêta",
-    "description": "Tazrout n'est pas seulement un projet étudiant. Nous construisons une infrastructure agricole nationale évolutive pour la sécurité hydrique de l'Algérie.",
+    "description": "Le systeme tourne en labo. L objectif c est dix fermes d ici 2028.",
     "phases": {
       "1": {
         "title": "Plateforme Nationale",
         "subtitle": "Intelligence Politique",
-        "description": "Agrégation de données de terrain anonymisées dans une plateforme centrale pour le Ministère de l'Agriculture. Transformer la télémétrie brute en intelligence décisionnelle nationale.",
+        "description": "Agreger les donnees terrain anonymisees dans une plateforme que le ministere de l Agriculture peut vraiment interroger. Des lectures de sol transformees en quelque chose qui oriente la politique de l eau.",
         "icon": "Database"
       },
       "2": {
         "title": "Climat & Météo",
         "subtitle": "Gestion Prédictive",
-        "description": "Intégration de prévisions météorologiques hyper-locales. Passage d'une irrigation réactive à une gestion prédictive anticipant les vagues de chaleur et les précipitations.",
+        "description": "Les previsions meteo de demain alimentent le planning d arrosage d aujourd hui. Le modele voit l orage arriver et saute le cycle du matin.",
         "icon": "Cloud"
       },
       "3": {
         "title": "Sécurité & Incendies",
         "subtitle": "Protection Avancée",
-        "description": "Mise en œuvre de la détection d'anomalies thermiques et de prédiction des risques d'incendie. Protection des champs via des protocoles d'arrêt d'urgence en temps réel.",
+        "description": "Les noeuds surveillent les pics thermiques. Si les chiffres disent incendie, toutes les vannes ferment et la pression d eau tient pour ce qui compte.",
         "icon": "Flame"
       },
       "4": {
         "title": "Application Mobile",
         "subtitle": "Surveillance à Distance",
-        "description": "Développement d'une application mobile sécurisée. Permettre aux agriculteurs de surveiller leurs zones et de recevoir des alertes d'urgence depuis n'importe où.",
+        "description": "Une appli telephone pour l agriculteur de l autre cote du champ. Statut des zones, alertes et bouton stop. Tourne sur le WiFi de la ferme.",
         "icon": "Smartphone"
       },
       "5": {
         "title": "Surveillance de Ferme",
         "subtitle": "Sécurité par l'IA",
-        "description": "Intégration de la vidéosurveillance et du contrôle d'accès. Supérieur à la sécurité humaine traditionnelle, avec des alertes automatisées contre les intrusions.",
+        "description": "Cameras et capteurs d entree sur le meme reseau. Si quelqu un touche un noeud qui ne devrait pas l etre, le tableau de bord le sait en premier.",
         "icon": "Shield"
       },
       "6": {
         "title": "Système de Contrôle Hybride",
-        "subtitle": "Synergie Humain-IA",
-        "description": "Basculez entre l'irrigation autonome par l'IA et le contrôle manuel. Donnez le dernier mot à l'agriculteur en un clic, tandis que l'IA gère la complexité du planning 24/7.",
+        "subtitle": "Tu gardes la main",
+        "description": "L IA gere le planning de 3h du matin. Tu reprends le controle quand tu en as besoin. Un bouton suffit.",
         "icon": "Hand"
       },
       "7": {
         "title": "Hardware Industriel V2",
         "subtitle": "Déploiement Robuste",
-        "description": "Kits de capteurs standardisés de qualité industrielle avec nœuds LoRa solaires. Conçus pour survivre aux conditions algériennes les plus rudes avec une maintenance minimale.",
+        "description": "Boitiers etanches, panneaux solaires, connecteurs industriels. Du materiel qui ne flanche pas quand Batna atteint 42 degres en juillet.",
         "icon": "Cpu"
       },
       "8": {
         "title": "Accessibilité Vocale",
         "subtitle": "Alertes Audio Natives",
-        "description": "Démocratiser la technologie via des alertes audio localisées en Arabe et Tamazight. Permettre à chaque agriculteur d'entendre l'état de sa ferme dans sa langue maternelle.",
+        "description": "Alertes audio en arabe et en tamazight. Un agriculteur qui ne lit pas l ecran entend quand meme ce qui s est passe.",
         "icon": "Volume2"
       },
       "9": {
         "title": "Expansion de l'Écosystème",
         "subtitle": "Santé des Plantes",
-        "description": "Collaboration avec des experts en détection de maladies. Ajout de capteurs multi-spectraux pour prédire les épidémies avant qu'elles ne soient visibles à l'œil nu.",
+        "description": "Des capteurs qui detectent la maladie avant qu elle soit visible sur les feuilles. Construit avec des chercheurs qui etudient ca de pres.",
         "icon": "Heart"
       }
     }
@@ -422,7 +422,7 @@
       "0": {
         "tag": "Aperçu du Système",
         "title": "L'Écosystème Complet",
-        "desc": "Le système Tazrout intègre des capteurs de terrain, une alimentation en eau, une communication LoRa et un serveur central alimenté par l'IA — le tout fonctionnant localement sans internet."
+        "desc": "Le systeme Tazrout connecte les capteurs de terrain, l alimentation en eau, la radio LoRa et un serveur IA central, le tout sans internet."
       },
       "1": {
         "tag": "Couche 1 — Matériel de Terrain",
@@ -472,7 +472,7 @@
     "value_ai_title": "Les vannes obeissent au modele",
     "value_ai_desc": "Les ordres viennent du moteur. L ecran sert a lire. Le gros bouton rouge existe encore.",
     "value_local_title": "Plusieurs morceaux de terrain",
-    "value_local_desc": "Cultures différentes, coins différents — chaque zone avec ses propres règles d'arrosage."
+    "value_local_desc": "Des cultures differentes, des coins de terrain differents. Chaque zone a ses propres regles d arrosage."
   },
   "PitchDeck": {
     "evidence_kicker": "Où on en est",
@@ -552,23 +552,23 @@
       {
         "who": "Netafim / Lindsay",
         "them": "Dépendant du cloud, coût d'import élevé. Pas de mode hors ligne. Pas de données d'entraînement locales.",
-        "us": "Fonctionnel hors ligne. Vannes contrôlées par l'IA. Entraîné sur des données climatiques algériennes. Coût BOM local."
+        "us": "Fonctionne hors ligne. Vannes pilotees par l IA locale. Entraine sur des donnees en climat aride algerien. Ton cout materiel, pas un abonnement cloud."
       },
       {
         "who": "Kits IoT génériques",
         "them": "Coût bas mais sans IA, sans offline, dépendance cloud partielle.",
-        "us": "Moteur de décision IA complet. Données locales, sans cloud. Alertes SMS pour téléphones basiques."
+        "us": "Moteur IA complet sur ton LAN. Aucune dependance cloud. Pas de facture recurrente pour des donnees qui t appartiennent."
       },
       {
         "who": "Minuteur et espoir",
         "them": "Pas cher jusqu'à la semaine sèche. Sans données, sans visibilité.",
-        "us": "Piloté par les capteurs et le modèle. Plusieurs zones, chacune avec ses règles."
+        "us": "Pilote par les capteurs, controle par le modele. Plusieurs zones chacune avec ses propres regles. Fini les minuteries, fini les suppositions."
       }
     ],
     "roadmap_kicker": "Dates",
     "closing_kicker": "Sans costard",
     "closing_title": "On veut de la boue sur les pneus, pas un nouveau diaporama.",
-    "closing_body": "Notre demande : validation comme preuve de concept pilote déployable. Une connexion avec l'INRAA ou une coopérative agricole. Accès à un terrain pilote (200–500 m²). Vision 2028 : 10+ installations connectées à travers plusieurs wilayas, une plateforme nationale de données agricoles alimentant la politique et la recherche, et l'irrigation pilotée par l'IA pour chaque agriculteur algérien.",
+    "closing_body": "Un terrain pilote, 200 a 500 metres carres. Un contact avec l INRAA ou une cooperative prete a laisser planter des noeuds dans de la vraie terre. C est ca la demande.\n\nD ici 2028 : dix sites qui tournent, une plateforme de donnees que le ministere peut vraiment interroger, et un cout assez bas pour que n importe quel agriculteur algerien puisse se l offrir.",
     "closing_quote": "\"Projet étudiant sur le papier. Champs secs dans la vraie vie. Même envie.\"",
     "closing_cta_primary": "Demande d’installation",
     "closing_cta_secondary": "Documentation technique",

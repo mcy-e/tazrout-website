@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { inter, lora } from '@/lib/fonts'
+import { inter, lora, jetbrainsMono } from '@/lib/fonts'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import Script from 'next/script'
@@ -35,7 +35,7 @@ export default async function RootLayout({
   const dir = locale === 'ar' ? 'rtl' : 'ltr'
   
   return (
-    <html lang={locale} dir={dir} className={`${inter.variable} ${lora.variable}`} data-scroll-behavior="smooth">
+    <html lang={locale} dir={dir} className={`${inter.variable} ${lora.variable} ${jetbrainsMono.variable}`} data-scroll-behavior="smooth">
       <head>
         <Script
           id="theme-init"
