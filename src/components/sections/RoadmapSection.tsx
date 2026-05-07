@@ -19,7 +19,7 @@ export default function RoadmapSection() {
   ]
 
   return (
-    <section className="relative py-24 sm:py-32 bg-brand-deep/50 overflow-hidden">
+    <section className="relative py-16 sm:py-24 md:py-32 bg-brand-deep/50 overflow-hidden">
       <div className="section-container relative z-10">
         <motion.div
           initial="hidden"
@@ -105,7 +105,7 @@ export default function RoadmapSection() {
 
                 <div className="text-center">
                   <div
-                    className={`text-[10px] font-bold uppercase tracking-[0.2em] mb-2 ${
+                    className={`text-[10px] font-bold uppercase tracking-[0.1em] sm:tracking-[0.2em] mb-2 ${
                       milestone.completed ? 'text-brand-primary' : 'text-[var(--color-muted)]'
                     }`}
                   >

@@ -514,7 +514,7 @@ L5 — Frontend
                     </div>
                     <div className="overflow-x-auto custom-scrollbar">
                       <pre className="text-xs font-mono text-brand-primary/90 space-y-2 leading-relaxed min-w-[500px] sm:min-w-0">
-                        {`CREATE DATABASE tazrout_db;\nCREATE USER tazrout_user WITH PASSWORD 'tazrout_pass123';\nGRANT ALL PRIVILEGES ON DATABASE tazrout_db TO tazrout_user;\nALTER DATABASE tazrout_db OWNER TO tazrout_user;`}
+                        {`CREATE DATABASE tazrout_db;\nCREATE USER tazrout_user WITH PASSWORD '\u003cYOUR_SECURE_PASSWORD\u003e';\nGRANT ALL PRIVILEGES ON DATABASE tazrout_db TO tazrout_user;\nALTER DATABASE tazrout_db OWNER TO tazrout_user;`}
                       </pre>
                     </div>
                   </div>
@@ -522,8 +522,16 @@ L5 — Frontend
                   <div className="flex items-start gap-3 p-4 rounded-xl bg-brand-primary/5 border border-brand-primary/10">
                     <Zap size={20} className="text-brand-primary flex-shrink-0 mt-0.5" />
                     <p className="text-xs text-[var(--color-muted)] leading-relaxed">
+                      <span className="font-bold text-brand-primary uppercase text-[10px] mr-2">Credentials:</span>
+                      Replace <code className="text-brand-primary px-1">&lt;YOUR_SECURE_PASSWORD&gt;</code> with a strong, unique password before deploying. Never commit credentials to version control. Connection strings live in <code className="text-brand-primary px-1">application.properties</code>, which is excluded from the public repository.
+                    </p>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-4 rounded-xl bg-brand-primary/5 border border-brand-primary/10">
+                    <Zap size={20} className="text-brand-primary flex-shrink-0 mt-0.5" />
+                    <p className="text-xs text-[var(--color-muted)] leading-relaxed">
                       <span className="font-bold text-brand-primary uppercase text-[10px] mr-2">Pro Tip:</span>
-                      Use the <code className="text-brand-primary px-1">mqtt_simulator.py</code> with real Postgres connection to test analytical chart growth before field deployment.
+                      Use the MQTT simulator script with a real Postgres connection to test analytical chart growth before field deployment.
                     </p>
                   </div>
                 </div>
@@ -658,7 +666,7 @@ L5 — Frontend
                     </h3>
                     <div className="overflow-x-auto custom-scrollbar">
                       <pre className="text-[10px] sm:text-xs font-mono text-brand-primary/90 leading-relaxed min-w-[400px] sm:min-w-0">
-{`mosquitto_sub -t "tazrout/#" -u tazrout_admin -P tazrout123 -v`}
+{`mosquitto_sub -t "tazrout/#" -u <mqtt_user> -P <your_mqtt_password> -v`}
                       </pre>
                     </div>
                     <p className="mt-3 text-xs text-[var(--color-muted)]">
@@ -719,10 +727,10 @@ L5 — Frontend
         >
           <p className="text-[var(--color-muted)] text-[10px] mb-6 font-mono tracking-widest uppercase">
             {locale === 'ar'
-              ? 'نهاية مركز التوثيق • مشروع ENSCS 2024'
+              ? 'نهاية مركز التوثيق • مشروع ENSCS 2026'
               : locale === 'fr'
-                ? 'Fin du centre de documentation • Projet ENSCS 2024'
-                : 'End of Documentation Hub • NSCS Project 2024'}
+                ? 'Fin du centre de documentation • Projet ENSCS 2026'
+                : 'End of Documentation Hub • NSCS Project 2026'}
           </p>
           <div className="w-24 h-px bg-gradient-to-r from-transparent via-brand-primary/30 to-transparent mx-auto" />
         </motion.div>

@@ -56,7 +56,7 @@ export default function PitchCompetitiveStrip() {
             <motion.div
               key={row.who}
               variants={fadeUp}
-              className="grid md:grid-cols-[1fr_1.2fr_1.2fr] gap-4 md:gap-px border-t border-[var(--color-border-subtle)] bg-[var(--color-border-subtle)]"
+              className="grid md:grid-cols-[1fr_1.2fr_1.2fr] gap-2 md:gap-px border-t border-[var(--color-border-subtle)] bg-[var(--color-border-subtle)]"
             >
               <div className="bg-[var(--color-surface)] p-5 md:p-6 font-heading font-semibold text-[var(--color-foreground)]">
                 {row.who}

@@ -14,8 +14,8 @@
     "title3": "Racines Anciennes.",
     "pitch_kicker": "Cinq étudiants. École nationale supérieure de cybersécurité. Fil incubateur.",
     "pitch_badge": "Fabriqué en Algérie. Hors ligne. Ça reste sur ton LAN.",
-    "description": "On branche une irrigation qui écoute la parcelle : LoRa, un petit cerveau sur place, un écran lisible au soleil. Les motifs rappellent l’amazigh. Le code vient de nous.",
-    "description_vp": "Les capteurs parlent du sol et de l’air. Quand une zone a vraiment soif, le modèle le dit. Tu vois tout en arabe ou en français sur un seul écran. Pas d’abonnement cloud. Pas besoin de réseau au milieu des rangs. Juste le réseau de la ferme.",
+    "description": "Tazrout est un écosystème IoT autonome propulsé par l'IA pour l'agriculture de précision — des nœuds LoRa sur le terrain, un cerveau IA local et un tableau de bord multilingue. Conçu pour éliminer le gaspillage d'eau et fonctionner entièrement hors ligne. Le code vient de nous.",
+    "description_vp": "Les capteurs lisent le sol et l'air en temps réel. Quand une zone a vraiment besoin d'eau, le modèle décide. Tu vois tout en arabe ou en français sur un seul écran. Pas d'abonnement cloud. Pas besoin de réseau au milieu des rangs. Une intelligence prédictive qui vit sur ta ferme.",
     "cta_explore": "Voir comment c’est fait",
     "cta_dashboard": "La suite qu’on vise",
     "cta_contact": "Nous écrire",
@@ -28,19 +28,19 @@
     "monitoring_title": "Voir le terrain",
     "monitoring_desc": "Humidité, température, niveau d’eau. Par zone. Maintenant.",
     "ai_title": "Le modèle tranche",
-    "ai_desc": "Il lit les capteurs et choisit un volume quand la culture en a besoin, pas parce que l’horloge l’a dit.",
-    "alerts_title": "Quand ça dérape",
-    "alerts_desc": "Tu reçois un signal. Les vannes peuvent couper avant que tu cours au tuyau.",
+    "ai_desc": "Il lit les capteurs et choisit le volume quand la culture en a vraiment besoin, pas parce que l horloge le dit.",
+    "alerts_title": "Quand ca derape",
+    "alerts_desc": "Tu recois un signal. Les vannes peuvent couper avant que tu courses au tuyau.",
     "zones_title": "Plusieurs morceaux de champ",
-    "zones_desc": "Cultures différentes, coins différents, chacun avec ses règles.",
+    "zones_desc": "Cultures differentes, coins differents, chacun avec ses propres regles.",
     "lan_title": "Sans internet",
-    "lan_desc": "Serveur, modèle et écran sur le réseau de la ferme. Si la ligne tombe, les rangs boivent quand même.",
+    "lan_desc": "Serveur, modele et ecran sur le reseau de la ferme. Si la ligne tombe, les rangs boivent quand meme.",
     "ui_title": "Une gueule locale",
     "ui_desc": "Motifs et typo qui ressemblent au Maghreb, pas à un SaaS californien."
   },
   "Architecture": {
     "title": "Tout reste sur le réseau de la ferme",
-    "description": "Cinq couches, un LAN. Les nœuds hurlement en LoRa, la passerelle jette ça dans MQTT, le backend et le modèle râclent, Flutter te montre ce qui s’est passé. Pas besoin d’ouvrir Internet.",
+    "description": "Cinq couches, un seul LAN. Les noeuds crient en LoRa, la passerelle pousse dans MQTT, le backend et le modele traitent les donnees, Flutter affiche ce qui s est passe. Aucune connexion externe requise.",
     "hardware_title": "Matériel de Terrain",
     "hardware_desc": "Capteurs + Microcontrôleurs LoRa",
     "gateway_title": "Passerelle",
@@ -53,22 +53,22 @@
     "frontend_desc": "Tableau de Bord Flutter"
   },
   "Team": {
-    "title": "Qui a tout soudé",
-    "description": "Nous cinq à l’école nationale supérieure de cybersécurité. Cartes, Python, Flutter, radio : tout est dans la pièce. Pas de prestataire fantôme.",
-    "cta": "Rencontrer Toute l'Équipe",
-    "frontend_role": "Frontend Devlopeur",
-    "backend_role": "Backend Devlopeur",
-    "ai_role": "Devlopeur De Moteur D'IA ",
-    "network_role": "Enginieur De Réseaux ",
-    "hardware_role": "Devlopeur De Systèmes Embarqués",
+    "title": "Qui a construit ca",
+    "description": "Nous cinq a l ecole nationale superieure de cybersecurite. Cartes, Python, Flutter, radio : tout entre nos mains. Pas de sous-traitant fantome.",
+    "cta": "Rencontrer toute l equipe",
+    "frontend_role": "Developpeur Frontend",
+    "backend_role": "Developpeur Backend",
+    "ai_role": "Developpeur Moteur IA",
+    "network_role": "Ingenieur Reseaux",
+    "hardware_role": "Developpeur Systemes Embarques",
     "photo_missing": "Photo à Venir"
   },
   "Install": {
     "title": "Tu veux ça chez toi ?",
     "description": "Tazrout c’est du matériel plus du boulot sur site. Tu paies les nœuds et la passerelle, une mise en route une fois, puis une présence annuelle si tu veux. Les cinq peuvent venir visser, faire parler le réseau et te montrer l’écran. Un champ moyen, souvent quelques heures, parfois une journée si le terrain résiste.",
     "beta": "On est encore en bêta. Les grosses installations et la ligne téléphonique restent en pause jusqu’à nouvel ordre.",
-    "business_title": "Notre modèle",
-    "business_body": "Vous achetez le matériel (nœuds, passerelle, serveur sur site). Nous facturons séparément le déplacement et la mise en service. Ensuite, visite annuelle optionnelle. Tout tourne sur votre LAN — pas d'abonnement cloud obligatoire.",
+    "business_title": "Trois plans, un seul point d'entrée",
+    "business_body": "Plan 1 — Installation & Mise en service : déploiement complet de l'infrastructure matérielle, intégration sur site et configuration des capteurs. Frais Capex unique basé sur la nomenclature (BOM). Commencez ici, puis choisissez entre le Plan 2 ou le Plan 3.\n\nPlan 2 — Abonnement de Support : maintenance technique planifiée et mises à jour logicielles, recalibrage périodique et contrôles système. Frais récurrents pour assurer la pérennité de votre installation.\n\nPlan 3 — À la demande : support par incident pour les non-abonnés, réparations matérielles sur appel et visites d'urgence. Frais fixe par intervention.\n\nTout tourne sur votre LAN. Aucun abonnement cloud obligatoire.",
     "email_title": "Demande de projet",
     "email_desc": "Décrivez votre terrain et vos délais pour recevoir une estimation adaptée. Ce formulaire sert aux nouvelles installations — pas aux pannes en cours.",
     "email_other_form_hint": "Tazrout déjà en place et un souci ? Utilisez Aide → Support technique.",
@@ -148,7 +148,7 @@
     "description": "Un système d'irrigation intelligent complet avec des racines anciennes et une intelligence moderne. Construit par les étudiants de l'École Nationale Supérieure de Cybersécurité, Algérie.",
     "explore": "Explorer",
     "resources": "Ressources",
-    "about": "À Propos de Nous",
+    "about": "Qui Sommes-Nous",
     "school": "École Nationale Supérieure de Cybersécurité"
   },
   "Help": {
@@ -412,7 +412,7 @@
   },
   "System": {
     "banner_title": "Comment ça Marche",
-    "banner_desc": "Explorez chaque couche de l'architecture Tazrout. Faites glisser pour faire pivoter, faites défiler pour zoomer.",
+    "banner_desc": "Explorez chaque couche de l'architecture Tazrout. Faites glisser pour pivoter, faites défiler pour zoomer.",
     "summary_title": "Résumé de l'Architecture",
     "summary_desc": "Une architecture robuste à 5 couches uniquement en réseau local (LAN), fonctionnant sans internet.",
     "controls": "Faites glisser pour pivoter • Défilez pour zoomer",
@@ -458,26 +458,26 @@
   },
   "Pitch": {
     "problem_title": "Ce qui coince",
-    "problem_headline": "Les rangs n’ont pas besoin d’un calendrier. Ils ont besoin de chiffres.",
-    "problem_desc": "L’eau manque et le temps saute. Les minuteurs arrosent pile après la pluie ou ratent le coup de chaud. Personne n’a regardé le sol avant d’ouvrir la vanne.",
-    "problem_sub": "Les kits importés imaginent la fibre, un gros chèque et un agronome à l’appel. La majorité des fermes n’a rien de tout ça. Il leur reste un minuteur et des prières.",
+    "problem_headline": "Les rangs n ont pas besoin d un calendrier. Ils ont besoin de chiffres.",
+    "problem_desc": "67,4 % de l'eau douce algérienne est consommée par l'agriculture. L'irrigation manuelle en gaspille 40–60 %. La plupart des petites fermes algériennes n'ont aucun outil numérique — les minuteurs arrosent juste après la pluie ou ratent les pics de chaleur.",
+    "problem_sub": "Le vide : aucun pont évolutif entre l'agriculture traditionnelle et les outils numériques, laissant gouvernements, organisations et agriculteurs incapables de stopper le gaspillage d'eau ou d'atteindre les objectifs nationaux de modernisation.",
     "solution_title": "Ce qu’on fait",
-    "solution_headline": "Le modèle ouvre la vanne. Le nœud obéit. Toi tu regardes.",
+    "solution_headline": "Le modele ouvre la vanne. Le noeud execute. Toi tu regardes.",
     "solution_desc": "On a tout chaîné sur le LAN : petites cartes dans la terre, LoRa vers le Pi au hangar, MQTT au milieu, Spring et Postgres pour l’histoire, Python pour décider, Flutter sur l’écran. On a fait tourner la simu de bout en bout avant d’ouvrir la bouche.",
-    "stat_water_waste": "Eau jetée au mauvais jour",
-    "stat_manual_error": "Toujours au doigt",
+    "stat_water_waste": "67,4 % de l'eau douce algérienne va à l'agriculture",
+    "stat_manual_error": "40–60 % gaspillée par l'irrigation manuelle",
     "value_title": "Pourquoi nous",
-    "value_offline_title": "Ça tourne au hangar",
-    "value_offline_desc": "Radio, courtier, serveur sur place. Personne ne te facture une API à l’étranger.",
-    "value_ai_title": "Les vannes écoutent le modèle",
-    "value_ai_desc": "Les ordres viennent du moteur. L’écran sert à lire. Le gros bouton rouge existe encore.",
-    "value_local_title": "Pensé ici",
-    "value_local_desc": "Arabe et français dans la même UI. Les données dorment chez toi."
+    "value_offline_title": "Ca tourne dans le hangar",
+    "value_offline_desc": "Radio, courtier, serveur sur place. Personne ne te facture un appel API a l etranger.",
+    "value_ai_title": "Les vannes obeissent au modele",
+    "value_ai_desc": "Les ordres viennent du moteur. L ecran sert a lire. Le gros bouton rouge existe encore.",
+    "value_local_title": "Plusieurs morceaux de terrain",
+    "value_local_desc": "Cultures différentes, coins différents — chaque zone avec ses propres règles d'arrosage."
   },
   "PitchDeck": {
     "evidence_kicker": "Où on en est",
-    "evidence_title": "Ça tourne au labo. On veut la gadoue.",
-    "evidence_subtitle": "Chaque brique parle à la suivante pour de vrai. Pas de vidéo maquillée.",
+    "evidence_title": "Ca tourne en labo. On veut la gadoue.",
+    "evidence_subtitle": "Chaque couche parle a la suivante pour de vrai. Pas de video maquilee.",
     "evidence_items": [
       {
         "title": "Du capteur à l’écran",
@@ -502,31 +502,31 @@
     "flow_steps": [
       {
         "name": "Sentir",
-        "body": "Les cartes se réveillent, lisent l’humidité, l’air, le niveau, ce qu’on y a branché."
+        "body": "Les nœuds se réveillent sur minuteur et lisent ce qu'on y a branché."
       },
       {
         "name": "Envoyer",
-        "body": "LoRa envoie un petit JSON vers la passerelle. Pas de wifi du café."
+        "body": "LoRa envoie un petit paquet JSON vers la passerelle."
       },
       {
         "name": "Collecter",
-        "body": "La passerelle pose la ligne sur Mosquitto pour qui veut l’écouter."
+        "body": "La passerelle décode et publie sur Mosquitto pour qui veut l'écouter."
       },
       {
         "name": "Stocker",
-        "body": "Java range dans Postgres et sort des graphes si tu insistes."
-      },
-      {
-        "name": "Décider",
-        "body": "Le modèle avale le flux et poste son avis plus deux lignes de pourquoi."
-      },
-      {
-        "name": "Agir",
-        "body": "MQTT partout, passerelle, radio descend, relais claque. Routines seulement."
+        "body": "Un serveur reçoit le paquet et le stocke en base de données."
       },
       {
         "name": "Vérifier",
-        "body": "Les accusés remontent. L’écran montre ce que tu pensais sur la vanne."
+        "body": "L'écran affiche l'état que vous attendez."
+      },
+      {
+        "name": "Décider",
+        "body": "Le modèle analyse le flux et publie sa décision."
+      },
+      {
+        "name": "Agir",
+        "body": "Ce qui est décidé est exécuté sur le terrain. Recommencer."
       }
     ],
     "matrix_kicker": "On se met où",
@@ -535,11 +535,11 @@
     "matrix_note": "On vise le trou : petit budget, pas de fibre, mais quand même un cerveau entre la pluie et la racine.",
     "matrix_cell_a": "Grosses marques cloud",
     "matrix_cell_b": "Minuteurs et sueur",
-    "market_kicker": "Qui écoute",
-    "market_title": "Petit début, preuve sur la facture d’eau",
-    "market_p1": "On compte des coopératives et des parcelles pilotes, pas des pourcentages de marché bidons. Les kits cloud ne sont jamais chiffrés pour les parcelles éparses.",
-    "market_p2": "La suite prochaine : quelques installations dont on n’a pas honte sur l’eau économisée et la dispo. Après on frappe aux grosses portes avec des chiffres.",
-    "market_highlight": "On parle déjà avec des gens qui bossent la terre. Ça vaut mieux qu’un mail froid.",
+    "market_kicker": "Opportunité de marché",
+    "market_title": "Wilayas du Nord d'abord, puis le continent",
+    "market_p1": "On commence par les fermes de taille moyenne à Tiaret, Sétif, Batna et Djelfa — des régions qui ont besoin de l'efficacité de l'IA sans connectivité internet. Objectif : 10 installations complètes en 24 mois, chaque site prouvant les économies d'eau et le ROI comme hub régional.",
+    "market_p2": "Ensuite : partenariats institutionnels avec des agro-corporations et des pilotes gouvernementaux liés à la sécurité alimentaire nationale. À long terme : étendre le modèle offline-first aux régions à stress hydrique dans la zone MENA et en Afrique.",
+    "market_highlight": "On ne dessine pas de cercles sur un slide TAM. On compte les cooperatives et les parcelles pilotes qu on peut physiquement atteindre.",
     "arch_kicker": "Couches",
     "arch_title": "Cinq étages. Un seul câble.",
     "arch_cta": "Parcourir le schéma",
@@ -550,25 +550,25 @@
     "competitive_col_answer": "Notre réponse",
     "competitive_rows": [
       {
-        "who": "Irrigation cloud connue",
-        "them": "Ça marche si tu as déjà la fibre et l’avocat.",
-        "us": "LAN d’abord. Ton sol reste chez toi. La radio atteint le fond du champ."
+        "who": "Netafim / Lindsay",
+        "them": "Dépendant du cloud, coût d'import élevé. Pas de mode hors ligne. Pas de données d'entraînement locales.",
+        "us": "Fonctionnel hors ligne. Vannes contrôlées par l'IA. Entraîné sur des données climatiques algériennes. Coût BOM local."
       },
       {
-        "who": "Arduino du dimanche",
-        "them": "Drôle en labo. Moins drôle quand l’inspecteur pose des questions.",
-        "us": "Journaux, bouton stop, deux langues sur la vitre."
+        "who": "Kits IoT génériques",
+        "them": "Coût bas mais sans IA, sans offline, dépendance cloud partielle.",
+        "us": "Moteur de décision IA complet. Données locales, sans cloud. Alertes SMS pour téléphones basiques."
       },
       {
         "who": "Minuteur et espoir",
-        "them": "Pas cher jusqu’à la semaine sèche.",
-        "us": "Le capteur dit soif. Le modèle ouvre. Tu mesures la différence."
+        "them": "Pas cher jusqu'à la semaine sèche. Sans données, sans visibilité.",
+        "us": "Piloté par les capteurs et le modèle. Plusieurs zones, chacune avec ses règles."
       }
     ],
     "roadmap_kicker": "Dates",
     "closing_kicker": "Sans costard",
-    "closing_title": "On veut de la boue sur les pneus, pas un PowerPoint de plus.",
-    "closing_body": "Si tu tiens un champ, un budget pilote ou un carnet d’adresses sérieux, ouvre la porte. On veut sortir du banc sans perdre le nord.",
+    "closing_title": "On veut de la boue sur les pneus, pas un nouveau diaporama.",
+    "closing_body": "Notre demande : validation comme preuve de concept pilote déployable. Une connexion avec l'INRAA ou une coopérative agricole. Accès à un terrain pilote (200–500 m²). Vision 2028 : 10+ installations connectées à travers plusieurs wilayas, une plateforme nationale de données agricoles alimentant la politique et la recherche, et l'irrigation pilotée par l'IA pour chaque agriculteur algérien.",
     "closing_quote": "\"Projet étudiant sur le papier. Champs secs dans la vraie vie. Même envie.\"",
     "closing_cta_primary": "Demande d’installation",
     "closing_cta_secondary": "Documentation technique",

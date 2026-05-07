@@ -185,7 +185,7 @@ export default function InstallationCTA() {
                     <Package className="h-4 w-4" strokeWidth={2} />
                   </div>
                   <h4 className="font-heading text-sm font-semibold text-[var(--color-foreground)]">{ti.business_title}</h4>
-                  <p className="mt-2 text-xs leading-relaxed text-[var(--color-muted)] sm:text-sm">{ti.business_body}</p>
+                  <p className="mt-2 text-xs leading-relaxed text-[var(--color-muted)] sm:text-sm whitespace-pre-line">{ti.business_body}</p>
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, y: 12 }}

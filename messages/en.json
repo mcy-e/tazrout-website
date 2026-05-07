@@ -14,8 +14,8 @@
     "title3": "Ancient Roots.",
     "pitch_kicker": "Five students. National School of Cyber Security. Incubator track.",
     "pitch_badge": "Made in Algeria. Runs offline. Stays on your LAN.",
-    "description": "We’re wiring up irrigation that listens to the field: LoRa links, a small brain on site, and a dashboard you can read in daylight. The visuals nod to Amazigh patterns. The wiring is ours.",
-    "description_vp": "Sensors tell us what the soil and air are doing. When a zone actually needs water, the model says so. You watch everything in Arabic or French on one screen. No cloud subscription. No signal bar out in the rows. Just your farm’s own network.",
+    "description": "Tazrout is an autonomous AI-driven IoT ecosystem for precision agriculture — LoRa nodes in the field, a local AI brain, and a multilingual dashboard. Built to eliminate water waste and stay entirely offline. The wiring is ours.",
+    "description_vp": "Sensors read what the soil and air are doing in real time. When a zone actually needs water, the model decides. You watch everything in Arabic or French on one screen. No cloud subscription. No signal bar out in the rows. Predictive intelligence that lives on your farm.",
     "cta_explore": "See how it works",
     "cta_dashboard": "What we’re building next",
     "cta_contact": "Write to us",
@@ -67,8 +67,8 @@
     "title": "Want this on your land?",
     "description": "Tazrout is kit plus work on site. You pay for the nodes and gateway, a one time hookup, and later a yearly check in if you want it. The five of us can travel, bolt things down, get the network talking, and show you the screen. A medium field is usually a few hours, sometimes a day if the terrain fights back.",
     "beta": "We’re still in beta. Full rollout installs and phone lines stay paused until we say otherwise.",
-    "business_title": "How we charge",
-    "business_body": "You buy the hardware (nodes, gateway, on‑farm server stack). We quote travel and commissioning separately. After go‑live you can book an optional yearly walkthrough. Everything runs on your LAN—there is no mandatory cloud subscription.",
+    "business_title": "Three plans, one entry point",
+    "business_body": "Plan 1 — Implementation \u0026 Setup: full hardware infrastructure deployment, on-site system integration and sensor configuration. One-time Capex fee based on BOM costs and labor. Start here, then choose between Plan 2 or Plan 3.\n\nPlan 2 — Subscription for Monitoring \u0026 Support: scheduled technical maintenance and software updates, periodic sensor recalibration and system health checks, plus pay-per-feature upgrades like fire and weather detection. Recurring monthly or yearly fee (15–20% of hardware value).\n\nPlan 3 — On-Demand: pay-per-incident support for non-subscribers, on-call hardware repair and troubleshooting, emergency site visits and component replacement. Fixed fee per intervention.\n\nEverything runs on your LAN. No mandatory cloud subscription.",
     "email_title": "Project request",
     "email_desc": "Tell us about your land and timing so we can reply with a tailored estimate. This form is for new installs and budgets—not for a broken valve or dashboard issue.",
     "email_other_form_hint": "Already running Tazrout and something broke? Use Help → Technical support.",
@@ -457,22 +457,22 @@
     }
   },
   "Pitch": {
-    "problem_title": "What’s broken",
-    "problem_headline": "Rows don’t need a calendar. They need numbers.",
-    "problem_desc": "Water’s tight and weather jumps around. Timers keep watering right after rain or skip when the heat spikes. Nobody looked at the soil before opening the valve.",
-    "problem_sub": "The glossy kits from abroad want fibre, a fat cheque, and someone on retainer. Most farms here never get that stack. They get a timer and hope.",
+    "problem_title": "What's broken",
+    "problem_headline": "Rows don't need a calendar. They need numbers.",
+    "problem_desc": "67.4% of Algeria's fresh water is consumed by agriculture. Manual irrigation wastes 40–60% of that. Most small Algerian farms have zero digital tools — timers keep watering right after rain or skip when the heat spikes.",
+    "problem_sub": "The gap: no scalable bridge between traditional farming and digital tools, leaving governments, organisations, and farmers unable to stop massive water waste or achieve national modernization goals.",
     "solution_title": "What we’re doing",
     "solution_headline": "The model opens the valve. The node does what it’s told. You watch.",
     "solution_desc": "We chained it all on one LAN: little ESP boards in the dirt, LoRa to a Pi at the shed, MQTT in the middle, Spring and Postgres holding history, Python deciding the valve, Flutter on a screen you can lean on. We ran it end to end in simulation before bragging.",
-    "stat_water_waste": "Water poured on the wrong day",
-    "stat_manual_error": "Still guessing by habit",
+    "stat_water_waste": "67.4% of Algeria's fresh water goes to agriculture",
+    "stat_manual_error": "40–60% wasted by manual irrigation",
     "value_title": "Why bother with us",
     "value_offline_title": "It runs in the shed",
     "value_offline_desc": "Radio, broker, server on site. Nobody bills you per API call overseas.",
     "value_ai_title": "Valves listen to the model",
     "value_ai_desc": "Routine opens and closes come from the engine. You browse data. Big red stop still exists.",
-    "value_local_title": "Written for here",
-    "value_local_desc": "Arabic and French in one UI. Data sits on your machine, not someone else’s continent."
+    "value_local_title": "More than one patch",
+    "value_local_desc": "Different crops, different corners of the land — each zone with its own watering rules."
   },
   "PitchDeck": {
     "evidence_kicker": "Where we are",
@@ -502,31 +502,31 @@
     "flow_steps": [
       {
         "name": "Sense",
-        "body": "Nodes wake up on a timer, read moisture, air, water height, whatever we pinned."
+        "body": "Sensor nodes detect soil moisture and ambient metrics at field-level."
       },
       {
         "name": "Send",
-        "body": "LoRa flings a small JSON blob at the gateway. No café WiFi required."
+        "body": "LoRa radio transmits local data packets through the farm's private frequency."
       },
       {
         "name": "Collect",
-        "body": "Gateway unpacks it and drops the row on Mosquitto for whoever listens."
+        "body": "Gateway receives packets and pushes them to the Mosquitto MQTT broker."
       },
       {
         "name": "Store",
-        "body": "Java lands it in Postgres and serves charts if you ask nice."
-      },
-      {
-        "name": "Decide",
-        "body": "The model chews the stream and posts what it thinks plus a short why."
-      },
-      {
-        "name": "Act",
-        "body": "MQTT fans out, gateway pushes radio down, relay snaps. Routine paths only."
+        "body": "Spring Boot service ingests MQTT data and writes to the local PostgreSQL database."
       },
       {
         "name": "Check",
-        "body": "Acks bubble back. The screen shows the valve state you expect."
+        "body": "The Flutter dashboard fetches historical and real-time state for the operator."
+      },
+      {
+        "name": "Decide",
+        "body": "The AI Engine calculates the water need based on local soil trends."
+      },
+      {
+        "name": "Act",
+        "body": "The system issues an MQTT command to open solenoid valves as the model dictates."
       }
     ],
     "matrix_kicker": "Where we sit",
@@ -535,11 +535,11 @@
     "matrix_note": "We’re aiming at the gap: small purse, no fibre, still want a brain between rain and root.",
     "matrix_cell_a": "Big brand cloud rigs",
     "matrix_cell_b": "Timers and elbow grease",
-    "market_kicker": "Who pays attention",
-    "market_title": "Start small, prove the water bill",
-    "market_p1": "We count real coops and pilot fields, not pretend market share on a slide. Off the shelf cloud rigs don’t price for scattered plots.",
-    "market_p2": "Next step is a few installs that don’t embarrass us on water saved and uptime. Then we knock on bigger doors with receipts.",
-    "market_highlight": "We’re already talking to people who grow things for a living. That beats cold email.",
+    "market_kicker": "Market opportunity",
+    "market_title": "Northern Wilayas first, then the continent",
+    "market_p1": "We start with medium-scale farms in Tiaret, Sétif, Batna, and Djelfa — regions that need AI efficiency but have zero internet connectivity. Target: 10 full-scale installations within 24 months, each site proving water savings and ROI as a regional hub.",
+    "market_p2": "Next: institutional partnerships with ag-corporations requiring local data security and government pilots tied to national food security. Long-term: scale the offline-first model to water-stressed regions across MENA and Africa.",
+    "market_highlight": "We're not drawing circles on a TAM slide. We're counting cooperatives and pilot fields we can physically reach.",
     "arch_kicker": "Layers",
     "arch_title": "Five slices. One cable run.",
     "arch_cta": "Wander the diagram",
@@ -550,25 +550,25 @@
     "competitive_col_answer": "How we answer",
     "competitive_rows": [
       {
-        "who": "Famous cloud irrigation",
-        "them": "Works if you already bought fibre and a lawyer on retainer.",
-        "us": "LAN first. Your soil stays yours. Radio reaches the back forty."
+        "who": "Netafim / Lindsay",
+        "them": "Cloud-dependent, high import cost. No offline mode. No local training data.",
+        "us": "Offline-capable. AI-controlled valves. Trained on Algerian arid-climate data. Local BOM cost."
       },
       {
-        "who": "Garage Arduino stack",
-        "them": "Fun weekend. Ugly when the inspector asks who signed off.",
-        "us": "Logs, stop button, two languages on the glass."
+        "who": "Generic IoT kits",
+        "them": "Low cost but no AI, no offline capability, partial cloud dependency.",
+        "us": "Full AI decision engine. Local data, no cloud. SMS alerts for feature phones."
       },
       {
-        "who": "Hope and a hose timer",
-        "them": "Cheap until the dry week hits.",
-        "us": "Sensor says drink. Model opens. You measure what changed."
+        "who": "Timer and hope",
+        "them": "Cheap until the dry week hits. No data, no visibility.",
+        "us": "Sensor-driven, model-controlled. Multiple zones, each with its own rules."
       }
     ],
     "roadmap_kicker": "Dates",
     "closing_kicker": "Plain talk",
     "closing_title": "We want mud on the tyres, not another slideshow.",
-    "closing_body": "If you run land, fund pilots, or mentor hardware teams, we’d love an intro. Help us move this off the bench without losing the plot.",
+    "closing_body": "Our ask: validation as a deployable pilot-ready proof-of-concept. A connection with INRAA or an agricultural cooperative. Access to one pilot field (200–500 m²). Vision 2028: 10+ connected installations across multiple wilayas, a national agricultural data platform feeding policy and research, and AI-driven irrigation for every Algerian farmer.",
     "closing_quote": "\"Student project on paper. Dry fields in real life. Same hunger.\"",
     "closing_cta_primary": "Installation enquiry",
     "closing_cta_secondary": "Technical docs",

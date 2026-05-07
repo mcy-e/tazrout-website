@@ -73,7 +73,7 @@ export default function Hero() {
         >
           <motion.p
             variants={fadeUp}
-            className="mb-4 w-full text-[var(--color-primary)] opacity-90 font-mono text-xs tracking-[0.35em] uppercase md:text-center"
+            className="mb-4 w-full text-[var(--color-primary)] opacity-90 font-mono text-xs tracking-[0.12em] sm:tracking-[0.25em] md:tracking-[0.35em] uppercase md:text-center"
           >
             {t.Hero.pitch_kicker}
           </motion.p>
@@ -114,7 +114,7 @@ export default function Hero() {
 
           <motion.h1
             variants={fadeUp}
-            className="font-heading text-5xl font-bold leading-[1.1] tracking-tight text-[var(--color-foreground)] sm:text-6xl md:text-7xl lg:text-8xl"
+            className="font-heading text-4xl font-bold leading-[1.05] tracking-tight text-[var(--color-foreground)] sm:text-5xl md:text-7xl lg:text-8xl"
           >
             {t.Hero.title1} <br className="hidden md:block" />
             <span className="text-gradient">{t.Hero.title2}</span> <br />
