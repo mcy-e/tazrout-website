@@ -275,92 +275,14 @@ L5 — Frontend
                     </div>
                   </Card>
 
-                  <div className="grid gap-6 md:grid-cols-2">
-                    <Card className="p-6 border-[var(--color-border-subtle)] bg-[var(--color-surface)]">
-                      <h3 className="text-sm font-bold text-brand-primary mb-3 flex items-center gap-2">
-                        <Zap size={16} />{' '}
-                        {locale === 'ar'
-                          ? 'تدفق البيانات (المستشعرات → لوحة التحكم)'
-                          : locale === 'fr'
-                            ? 'Flux de données (capteurs → dashboard)'
-                            : 'Data Flow (Sensors → Dashboard)'}
-                      </h3>
-                      <ol className="text-sm text-[var(--color-muted)] space-y-3">
-                        <li>
-                          {locale === 'ar'
-                            ? '1) يقرأ ESP32 المستشعرات ويرسل إطار LoRa.'
-                            : locale === 'fr'
-                              ? '1) L’ESP32 lit les capteurs et transmet une trame LoRa.'
-                              : '1) ESP32 reads sensors and transmits a LoRa frame.'}
-                        </li>
-                        <li>
-                          {locale === 'ar'
-                            ? '2) تفك البوابة البيانات وتنشرها إلى'
-                            : locale === 'fr'
-                              ? '2) La passerelle décode et publie sur'
-                              : '2) Gateway decodes and publishes to'}{' '}
-                          <code className="text-brand-primary">tazrout/sensors</code>.
-                        </li>
-                        <li>
-                          {locale === 'ar'
-                            ? '3) يتحقق الـBackend ويحفظ القراءات في Postgres.'
-                            : locale === 'fr'
-                              ? '3) Le backend valide et persiste dans Postgres.'
-                              : '3) Backend validates and persists readings to Postgres.'}
-                        </li>
-                        <li>
-                          {locale === 'ar'
-                            ? '4) يعيد الـBackend بث الأحداث عبر WebSocket إلى لوحة التحكم.'
-                            : locale === 'fr'
-                              ? '4) Le backend rediffuse via WebSocket vers le dashboard.'
-                              : '4) Backend rebroadcasts frames over WebSocket to the dashboard.'}
-                        </li>
-                      </ol>
-                    </Card>
-
-                    <Card className="p-6 border-[var(--color-border-subtle)] bg-[var(--color-surface)]">
-                      <h3 className="text-sm font-bold text-brand-primary mb-3 flex items-center gap-2">
-                        <Cpu size={16} />{' '}
-                        {locale === 'ar'
-                          ? 'تدفق البيانات (الذكاء الاصطناعي → أمر صمام → تأكيد)'
-                          : locale === 'fr'
-                            ? 'Flux de données (IA → commande vanne → ACK)'
-                            : 'Data Flow (AI → Valve Command → ACK)'}
-                      </h3>
-                      <ol className="text-sm text-[var(--color-muted)] space-y-3">
-                        <li>
-                          {locale === 'ar'
-                            ? '1) يشترك محرك AI بمواضيع المستشعرات ويقرر الري.'
-                            : locale === 'fr'
-                              ? '1) Le moteur IA s’abonne aux capteurs et décide l’irrigation.'
-                              : '1) AI Engine subscribes sensor topics and decides irrigation.'}
-                        </li>
-                        <li>
-                          {locale === 'ar'
-                            ? '2) ينشر القرار إلى'
-                            : locale === 'fr'
-                              ? '2) Publie la décision sur'
-                              : '2) Publishes decision to'}{' '}
-                          <code className="text-brand-primary">tazrout/ai/decisions</code>.
-                        </li>
-                        <li>
-                          {locale === 'ar'
-                            ? '3) ينشر الأمر إلى'
-                            : locale === 'fr'
-                              ? '3) Publie la commande sur'
-                              : '3) Publishes command to'}{' '}
-                          <code className="text-brand-primary">tazrout/valve/command</code>.
-                        </li>
-                        <li>
-                          {locale === 'ar'
-                            ? '4) ترسل البوابة Downlink؛ تنفّذ الـMCU وتؤكد إلى'
-                            : locale === 'fr'
-                              ? '4) Downlink via passerelle; le MCU exécute et ACK sur'
-                              : '4) Gateway forwards downlink; MCU executes and ACKs to'}{' '}
-                          <code className="text-brand-primary">.../valve/ack</code>.
-                        </li>
-                      </ol>
-                    </Card>
+                  <div className="p-5 rounded-2xl bg-brand-primary/5 border border-brand-primary/10">
+                    <p className="text-sm text-[var(--color-muted)] leading-relaxed">
+                      {locale === 'ar'
+                        ? 'تتدفق البيانات من حساسات الحقل عبر LoRa إلى البوابة، ثم يوزّعها وسيط MQTT إلى محرك الذكاء الاصطناعي والخلفية.'
+                        : locale === 'fr'
+                          ? "Les données transitent des capteurs via LoRa jusqu'à la passerelle. Le broker MQTT les distribue au moteur IA et au backend."
+                          : 'Data flows from field sensors over LoRa to the gateway. The MQTT broker distributes it to the AI engine and backend.'}
+                    </p>
                   </div>
                 </div>
               </section>
@@ -379,37 +301,20 @@ L5 — Frontend
                     {t.Docs.deployment_desc}
                   </p>
 
-                  <div className="grid gap-6 md:grid-cols-2">
-                    <Card className="p-6 border-[var(--color-border-subtle)] bg-[var(--color-surface)]">
-                      <h3 className="text-sm font-bold text-brand-primary mb-4 flex items-center gap-2">
-                        <Terminal size={16} /> 1. Core Dependencies
-                      </h3>
-                      <div className="overflow-x-auto custom-scrollbar">
-                        <pre className="text-[10px] font-mono text-brand-primary/80 space-y-1 leading-relaxed">
-                          {`# Install PostgreSQL\nsudo apt install postgresql postgresql-contrib\n\n# Install MQTT Broker\nsudo apt install mosquitto mosquitto-clients\n\n# Install Java 17 & Maven\nsudo apt install openjdk-17-jdk maven`}
-                        </pre>
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {[
+                      { layer: locale === 'ar' ? 'الحساسات والاتصال' : locale === 'fr' ? 'Capteurs & radio' : 'Sensors & radio', tech: 'ESP32 + LoRa' },
+                      { layer: locale === 'ar' ? 'وسيط الرسائل' : locale === 'fr' ? 'Broker de messages' : 'Message broker', tech: 'Mosquitto MQTT' },
+                      { layer: locale === 'ar' ? 'الخلفية والتخزين' : locale === 'fr' ? 'Backend & stockage' : 'Backend & storage', tech: 'Spring Boot + PostgreSQL' },
+                      { layer: locale === 'ar' ? 'محرك الذكاء الاصطناعي' : locale === 'fr' ? 'Moteur IA' : 'AI engine', tech: 'Python (scikit-learn)' },
+                      { layer: locale === 'ar' ? 'لوحة التحكم' : locale === 'fr' ? 'Tableau de bord' : 'Dashboard', tech: 'Flutter Desktop' },
+                      { layer: locale === 'ar' ? 'الشبكة المحلية' : locale === 'fr' ? 'Réseau local' : 'Network', tech: 'LAN only' },
+                    ].map((row, i) => (
+                      <div key={i} className="p-4 rounded-xl border border-[var(--color-border-subtle)] bg-[var(--color-surface)]">
+                        <div className="text-[10px] uppercase tracking-wider text-[var(--color-muted)] mb-1">{row.layer}</div>
+                        <div className="text-sm font-bold text-brand-primary">{row.tech}</div>
                       </div>
-                    </Card>
-
-                    <Card className="p-6 border-[var(--color-border-subtle)] bg-[var(--color-surface)]">
-                      <h3 className="text-sm font-bold text-brand-primary mb-4 flex items-center gap-2">
-                        <Settings size={16} /> 2. Configuration Check
-                      </h3>
-                      <ul className="text-xs text-[var(--color-muted)] space-y-3">
-                        <li className="flex items-start gap-2">
-                          <span className="h-1.5 w-1.5 rounded-full bg-brand-primary mt-1.5 flex-shrink-0" />
-                          <span>Verify <code className="text-brand-primary">mosquitto.conf</code> allows external listeners.</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="h-1.5 w-1.5 rounded-full bg-brand-primary mt-1.5 flex-shrink-0" />
-                          <span>Ensure PostgreSQL port 5432 is open on the LAN.</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="h-1.5 w-1.5 rounded-full bg-brand-primary mt-1.5 flex-shrink-0" />
-                          <span>Update Spring Boot <code className="text-brand-primary">application.properties</code> with server IP.</span>
-                        </li>
-                      </ul>
-                    </Card>
+                    ))}
                   </div>
                 </div>
               </section>
@@ -453,44 +358,15 @@ L5 — Frontend
                     </div>
                   </Card>
 
-                  <div className="grid sm:grid-cols-3 gap-4">
-                    {[
-                      { label: 'QoS (Sensors)', value: '1 (At least once)', desc: 'Best effort reliability for telemetry.' },
-                      { label: 'QoS (Commands)', value: '2 (Exactly once)', desc: 'Valve commands must never execute twice.' },
-                      { label: 'Retained', value: 'State topics only', desc: 'Device state/status retained; sensor stream is not.' },
-                    ].map((spec, i) => (
-                      <div key={i} className="p-4 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border-subtle)] shadow-[var(--shadow-card)]">
-                        <div className="text-[10px] text-[var(--color-muted)] uppercase mb-1 font-bold">{spec.label}</div>
-                        <div className="text-sm font-bold text-brand-primary mb-1">{spec.value}</div>
-                        <p className="text-[9px] text-[var(--color-muted)] leading-tight">{spec.desc}</p>
-                      </div>
-                    ))}
+                  <div className="p-5 rounded-2xl bg-brand-primary/5 border border-brand-primary/10">
+                    <p className="text-sm text-[var(--color-muted)] leading-relaxed">
+                      {locale === 'ar'
+                        ? 'أوامر الصمامات تستخدم QoS 2 لضمان التنفيذ مرة واحدة. بيانات الحساسات بـQoS 1. الحالة الدائمة فقط هي المحتفظ بها في الوسيط.'
+                        : locale === 'fr'
+                          ? "Les commandes de vanne utilisent QoS 2 (exactement une fois). La télémétrie utilise QoS 1. Seul l'état persistant est retenu sur le broker."
+                          : 'Valve commands use QoS 2 for exactly-once delivery. Sensor telemetry uses QoS 1. Only device state topics are retained on the broker.'}
+                    </p>
                   </div>
-
-                  <Card className="p-6 border-[var(--color-border-subtle)] bg-[var(--color-surface)]">
-                    <h3 className="text-sm font-bold text-brand-primary mb-4 flex items-center gap-2">
-                      <Code size={16} /> Example Payload (Valve Command)
-                    </h3>
-                    <div className="p-4 sm:p-6 bg-[#0a0a0a] overflow-hidden">
-                      <div className="overflow-x-auto custom-scrollbar">
-                        <pre className="text-[10px] sm:text-xs font-mono text-brand-primary/90 leading-relaxed min-w-[400px] sm:min-w-0">
-{`{
-  "packet_type": "VALVE_COMMAND",
-  "command_id": "CMD-2026-0112",
-  "issued_by": "AI_ENGINE",
-  "issued_at": "2026-02-15T10:31:06Z",
-  "zone_id": "zone_a",
-  "device_id": "MCU-ZONE-A-001",
-  "command": "OPEN_VALVE",
-  "duration_minutes": 20,
-  "priority": "NORMAL",
-  "linked_decision_id": "DEC-2026-0047",
-  "reason": "AI irrigation decision — moisture below threshold"
-}`}
-                        </pre>
-                      </div>
-                    </div>
-                  </Card>
                 </div>
               </section>
 
@@ -508,30 +384,13 @@ L5 — Frontend
                     {t.Docs.db_desc}
                   </p>
                   
-                  <div className="bg-[var(--color-surface)] rounded-xl border border-[var(--color-border-subtle)] p-8 relative overflow-hidden shadow-[var(--shadow-card)]">
-                    <div className="absolute top-0 right-0 p-4 opacity-10">
-                      <Code size={48} />
-                    </div>
-                    <div className="overflow-x-auto custom-scrollbar">
-                      <pre className="text-xs font-mono text-brand-primary/90 space-y-2 leading-relaxed min-w-[500px] sm:min-w-0">
-                        {`CREATE DATABASE tazrout_db;\nCREATE USER tazrout_user WITH PASSWORD '\u003cYOUR_SECURE_PASSWORD\u003e';\nGRANT ALL PRIVILEGES ON DATABASE tazrout_db TO tazrout_user;\nALTER DATABASE tazrout_db OWNER TO tazrout_user;`}
-                      </pre>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-4 rounded-xl bg-brand-primary/5 border border-brand-primary/10">
-                    <Zap size={20} className="text-brand-primary flex-shrink-0 mt-0.5" />
-                    <p className="text-xs text-[var(--color-muted)] leading-relaxed">
-                      <span className="font-bold text-brand-primary uppercase text-[10px] mr-2">Credentials:</span>
-                      Replace <code className="text-brand-primary px-1">&lt;YOUR_SECURE_PASSWORD&gt;</code> with a strong, unique password before deploying. Never commit credentials to version control. Connection strings live in <code className="text-brand-primary px-1">application.properties</code>, which is excluded from the public repository.
-                    </p>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-4 rounded-xl bg-brand-primary/5 border border-brand-primary/10">
-                    <Zap size={20} className="text-brand-primary flex-shrink-0 mt-0.5" />
-                    <p className="text-xs text-[var(--color-muted)] leading-relaxed">
-                      <span className="font-bold text-brand-primary uppercase text-[10px] mr-2">Pro Tip:</span>
-                      Use the MQTT simulator script with a real Postgres connection to test analytical chart growth before field deployment.
+                  <div className="p-5 rounded-2xl bg-brand-primary/5 border border-brand-primary/10">
+                    <p className="text-sm text-[var(--color-muted)] leading-relaxed">
+                      {locale === 'ar'
+                        ? 'يستخدم النظام PostgreSQL مع Hibernate ORM. تبقى بيانات الاعتماد على الخادم المحلي وخارج أي مستودع عام.'
+                        : locale === 'fr'
+                          ? 'Le système utilise PostgreSQL avec Hibernate ORM. Les identifiants restent sur le serveur local, hors de tout dépôt public.'
+                          : 'The system uses PostgreSQL with Hibernate ORM. All credentials stay on the local server, out of any public repository.'}
                     </p>
                   </div>
                 </div>
@@ -566,31 +425,15 @@ L5 — Frontend
                     </div>
                   </div>
 
-                  <div className="bg-brand-primary/10 rounded-2xl p-8 border border-brand-primary/20">
-                    <div className="grid gap-8 sm:grid-cols-3 text-center">
-                      {[
-                        { label: 'Model Type', value: 'XGBoost v2' },
-                        { label: 'Accuracy', value: '94.72%' },
-                        { label: 'Optimization', value: 'MAE' },
-                      ].map((metric, i) => (
-                        <div key={i}>
-                          <div className="text-[10px] text-brand-primary font-bold uppercase mb-1 tracking-widest">{metric.label}</div>
-                          <div className="text-2xl font-heading font-bold text-[var(--color-foreground)]">{metric.value}</div>
-                        </div>
-                      ))}
-                    </div>
+                  <div className="p-5 rounded-2xl bg-brand-primary/5 border border-brand-primary/10">
+                    <p className="text-sm text-[var(--color-muted)] leading-relaxed">
+                      {locale === 'ar'
+                        ? 'يعمل المحرك على مرحلتين: يحدد ما إذا كانت المنطقة تحتاج ريّاً، ثم يحسب الحجم المطلوب. المعالجة كلها محلية.'
+                        : locale === 'fr'
+                          ? "Le moteur fonctionne en deux phases : décider si la zone a besoin d'irrigation, puis calculer le volume. Tout est local."
+                          : 'The engine runs in two stages: decide if a zone needs water, then estimate the volume. All processing is local.'}
+                    </p>
                   </div>
-
-                  <Card className="p-6 border-[var(--color-border-subtle)] bg-[var(--color-surface)]">
-                    <h3 className="text-sm font-bold text-brand-primary mb-4 flex items-center gap-2">
-                      <Terminal size={16} /> AI Inference (Classification → Regression)
-                    </h3>
-                    <ol className="text-xs text-[var(--color-muted)] space-y-2">
-                      <li>1) Classifier predicts \(irrigate = 0/1\) from humidity/temperature/soil_moisture/water_level + plant type.</li>
-                      <li>2) If \(irrigate = 0\), the engine returns 0 liters and publishes a non-action decision.</li>
-                      <li>3) If \(irrigate = 1\), regressor predicts liters and publishes the irrigation plan + valve command.</li>
-                    </ol>
-                  </Card>
                 </div>
               </section>
 
@@ -648,70 +491,6 @@ L5 — Frontend
                 </div>
               </section>
 
-              {/* Testing Section */}
-              <section id="testing" className="scroll-mt-32 space-y-10">
-                <div className="flex items-center gap-4">
-                  <div className="h-12 w-12 flex items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
-                    <Zap size={24} />
-                  </div>
-                  <h2 className="text-3xl font-heading font-bold text-[var(--color-foreground)]">
-                    {locale === 'ar' ? 'الاختبار والتحقق' : locale === 'fr' ? 'Tests & vérification' : 'Testing & Verification'}
-                  </h2>
-                </div>
-                <div className="space-y-6">
-                  <Card className="p-6 border-[var(--color-border-subtle)] bg-[var(--color-surface)]">
-                    <h3 className="text-sm font-bold text-brand-primary mb-4 flex items-center gap-2">
-                      <Terminal size={16} />{' '}
-                      {locale === 'ar' ? 'راقب كل رسائل MQTT' : locale === 'fr' ? 'Observer tout le trafic MQTT' : 'Observe all MQTT traffic'}
-                    </h3>
-                    <div className="overflow-x-auto custom-scrollbar">
-                      <pre className="text-[10px] sm:text-xs font-mono text-brand-primary/90 leading-relaxed min-w-[400px] sm:min-w-0">
-{`mosquitto_sub -t "tazrout/#" -u <mqtt_user> -P <your_mqtt_password> -v`}
-                      </pre>
-                    </div>
-                    <p className="mt-3 text-xs text-[var(--color-muted)]">
-                      {locale === 'ar'
-                        ? 'يجب أن ترى حزم المستشعرات كل 30 ثانية لكل منطقة، بالإضافة إلى تغيّر الحالة والقرارات وACK.'
-                        : locale === 'fr'
-                          ? 'Vous devriez voir des paquets capteurs toutes les 30s par zone, ainsi que les changements d’état, décisions et ACK.'
-                          : 'You should see sensor packets every 30s per zone, plus state changes, decisions, and ACKs.'}
-                    </p>
-                  </Card>
-                  <Card className="p-6 border-[var(--color-border-subtle)] bg-[var(--color-surface)]">
-                    <h3 className="text-sm font-bold text-brand-primary mb-3">
-                      {locale === 'ar' ? 'قائمة تحقق' : locale === 'fr' ? 'Checklist' : 'Checklist'}
-                    </h3>
-                    <ul className="text-xs text-[var(--color-muted)] space-y-2">
-                      <li>
-                        - {locale === 'ar'
-                          ? 'يصل نبض البوابة مرة واحدة على الأقل كل 30 ثانية.'
-                          : locale === 'fr'
-                            ? 'Heartbeat passerelle au moins toutes les 30s.'
-                            : 'Gateway heartbeat received at least once every 30s.'}
-                      </li>
-                      <li>
-                        - {locale === 'ar'
-                          ? 'يحفظ الـBackend القراءات (جداول Postgres تُنشأ تلقائياً عبر Hibernate).'
-                          : locale === 'fr'
-                            ? 'Le backend persiste les lectures (tables Postgres auto-créées par Hibernate).'
-                            : 'Backend persists readings (Postgres tables auto-created by Hibernate).'}
-                      </li>
-                      <li>
-                        - {locale === 'ar' ? 'يمكن تتبع قرارات AI عبر' : locale === 'fr' ? 'Décisions IA traçables via' : 'AI decisions are traceable via'}{' '}
-                        <code className="text-brand-primary">linked_decision_id</code>{' '}
-                        {locale === 'ar' ? 'داخل الأوامر.' : locale === 'fr' ? 'dans les commandes.' : 'on commands.'}
-                      </li>
-                      <li>
-                        - {locale === 'ar'
-                          ? 'الإيقاف الطارئ يغلق جميع الصمامات وينشر تحديثات الحالة.'
-                          : locale === 'fr'
-                            ? 'L’arrêt d’urgence ferme toutes les vannes et publie l’état.'
-                            : 'Emergency Stop closes all valves and publishes status updates.'}
-                      </li>
-                    </ul>
-                  </Card>
-                </div>
-              </section>
 
             </main>
           </div>
